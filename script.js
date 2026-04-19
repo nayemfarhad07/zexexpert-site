@@ -8,35 +8,29 @@ document.querySelectorAll('.faq-list details').forEach((item) => {
   });
 });
 
-document.querySelectorAll('.interactive-card').forEach((card) => {
-  card.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const rotateX = ((y / rect.height) - 0.5) * -7;
-    const rotateY = ((x / rect.width) - 0.5) * 9;
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.015)`;
+const counters = document.querySelectorAll('.counter');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    if (el.dataset.done === 'true') return;
+    el.dataset.done = 'true';
 
-    const glow = card.querySelector('.glow-spot');
-    if (glow) {
-      glow.style.left = `${x}px`;
-      glow.style.top = `${y}px`;
-    }
-  });
+    const target = parseInt(el.dataset.target, 10);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1800;
+    const startTime = performance.now();
 
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = '';
+    const update = (now) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const value = Math.floor(target * ease);
+      el.textContent = value + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+      else el.textContent = target + suffix;
+    };
+    requestAnimationFrame(update);
   });
-});
+}, { threshold: 0.35 });
 
-document.querySelectorAll('.magnetic').forEach((el) => {
-  el.addEventListener('mousemove', (e) => {
-    const rect = el.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    el.style.transform = `translate(${x * 0.10}px, ${y * 0.10}px)`;
-  });
-  el.addEventListener('mouseleave', () => {
-    el.style.transform = '';
-  });
-});
+counters.forEach((c) => observer.observe(c));
