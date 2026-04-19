@@ -23,7 +23,10 @@
 
   <header class="topbar">
     <div class="brand">
-      <div class="brand-row"><img src="favicon.svg" class="brand-logo" alt=""><div class="brand-title">ZEXEXPERT</div></div>
+      <div class="brand-row">
+        <img src="favicon.svg" class="brand-logo" alt="">
+        <div class="brand-title">ZEXEXPERT</div>
+      </div>
       <div class="brand-sub">SOCIAL MEDIA AGENCY • ESTD 2022</div>
     </div>
 
@@ -41,7 +44,7 @@
   </header>
 
   <main class="container">
-    <section class="hero section">
+    <section class="hero section" id="home">
       <div class="section-pill">PREMIUM SOCIAL MEDIA AGENCY</div>
       <h1 class="hero-title">
         ZEX <span class="grad-blue">Social Media</span><br>Agency
@@ -55,12 +58,12 @@
       </p>
 
       <div class="hero-actions">
-        <a href="#services" class="btn btn-primary">Explore Services</a>
-        <a href="https://t.me/fensat" target="_blank" rel="noopener" class="btn btn-secondary">Contact Expert</a>
+        <button id="exploreBtn" class="btn btn-primary" type="button">Explore Services</button>
+        <button id="contactBtn" class="btn btn-secondary" type="button">Contact Expert</button>
       </div>
     </section>
 
-    <section class="section stats-strip">
+    <section class="section stats-strip" id="stats">
       <div class="stat-box">
         <div class="stat-value blue-grad counter" data-target="1200" data-suffix="+">0</div>
         <div class="stat-label">DEALS DONE</div>
@@ -83,41 +86,13 @@
       </div>
 
       <div class="services-grid">
-        <article class="service-card">
-          <div class="service-icon">✈</div>
-          <h3>Telegram Growth</h3>
-          <p>Smart channel and group growth with better audience reach.</p>
-        </article>
-        <article class="service-card">
-          <div class="service-icon">△</div>
-          <h3>Telegram Ads</h3>
-          <p>Targeted Telegram ad support for clean and fast campaign delivery.</p>
-        </article>
-        <article class="service-card">
-          <div class="service-icon">◎</div>
-          <h3>Instagram Ban/Unban</h3>
-          <p>Recovery support for restricted or banned Instagram accounts.</p>
-        </article>
-        <article class="service-card">
-          <div class="service-icon">✓</div>
-          <h3>Instagram Verification</h3>
-          <p>Structured support for profile review and verification process.</p>
-        </article>
-        <article class="service-card">
-          <div class="service-icon">♛</div>
-          <h3>Legacy Verified</h3>
-          <p>Professional handling for legacy verification related work.</p>
-        </article>
-        <article class="service-card">
-          <div class="service-icon">@</div>
-          <h3>Username Claim</h3>
-          <p>Assistance with premium, inactive, or requested username claims.</p>
-        </article>
-        <article class="service-card">
-          <div class="service-icon">↗</div>
-          <h3>Social Media Boosting</h3>
-          <p>Boost your authority, audience trust, and overall visibility.</p>
-        </article>
+        <article class="service-card"><div class="service-icon">✈</div><h3>Telegram Growth</h3><p>Smart channel and group growth with better audience reach.</p></article>
+        <article class="service-card"><div class="service-icon">△</div><h3>Telegram Ads</h3><p>Targeted Telegram ad support for clean and fast campaign delivery.</p></article>
+        <article class="service-card"><div class="service-icon">◎</div><h3>Instagram Ban/Unban</h3><p>Recovery support for restricted or banned Instagram accounts.</p></article>
+        <article class="service-card"><div class="service-icon">✓</div><h3>Instagram Verification</h3><p>Structured support for profile review and verification process.</p></article>
+        <article class="service-card"><div class="service-icon">♛</div><h3>Legacy Verified</h3><p>Professional handling for legacy verification related work.</p></article>
+        <article class="service-card"><div class="service-icon">@</div><h3>Username Claim</h3><p>Assistance with premium, inactive, or requested username claims.</p></article>
+        <article class="service-card"><div class="service-icon">↗</div><h3>Social Media Boosting</h3><p>Boost your authority, audience trust, and overall visibility.</p></article>
       </div>
     </section>
 
@@ -129,77 +104,12 @@
       </div>
 
       <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">◔</div>
-          <div><h3>24/7 Support</h3><p>Reliable support without unnecessary delay.</p></div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🛡</div>
-          <div><h3>Secure Process</h3><p>Privacy-focused handling and safer workflow.</p></div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <div><h3>Fast Delivery</h3><p>Quick turnaround with a more premium service feel.</p></div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">⚙</div>
-          <div><h3>Automated Systems</h3><p>Clean and scalable automation support.</p></div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">✦</div>
-          <div><h3>Expert Handling</h3><p>Professional guidance for major platform work.</p></div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">★</div>
-          <div><h3>High Success Rate</h3><p>Strong client trust backed by real completed work.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section social-proof">
-      <div class="section-heading">
-        <div class="section-pill">SOCIAL PROOF</div>
-        <h2>Trusted by <span class="grad-blue">Clients</span></h2>
-        <p>Real work, clean presentation, and a lighter premium layout.</p>
-      </div>
-
-      <div class="proof-banner-grid">
-        <div class="proof-banner">
-          <div class="proof-icon">👥</div>
-          <div>
-            <h3>1200+</h3>
-            <p>Deals Completed</p>
-          </div>
-        </div>
-        <div class="proof-banner">
-          <div class="proof-icon">✓</div>
-          <div>
-            <h3>Real Client Reviews</h3>
-            <p>Available on our channel</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="review-grid">
-        <article class="review-card">
-          <div class="stars">★★★★★ <span class="chip">Instagram</span></div>
-          <p>"Got my Instagram account unbanned within 48 hours. Professional service."</p>
-          <div class="reviewer"><span class="avatar">A</span><div><strong>Alex M.</strong><small>@alexm</small></div></div>
-        </article>
-        <article class="review-card">
-          <div class="stars">★★★★★ <span class="chip">Telegram</span></div>
-          <p>"Telegram channel growth was fast and properly managed."</p>
-          <div class="reviewer"><span class="avatar">S</span><div><strong>Sarah K.</strong><small>@sarahk</small></div></div>
-        </article>
-        <article class="review-card">
-          <div class="stars">★★★★★ <span class="chip">Meta</span></div>
-          <p>"Legacy verification process was handled very smoothly."</p>
-          <div class="reviewer"><span class="avatar">O</span><div><strong>Omar F.</strong><small>@omarF</small></div></div>
-        </article>
-      </div>
-
-      <div class="centered-btn-wrap">
-        <a class="btn btn-primary" href="https://t.me/taulch" target="_blank" rel="noopener">View Past Work</a>
+        <div class="feature-card"><div class="feature-icon">◔</div><div><h3>24/7 Support</h3><p>Reliable support without unnecessary delay.</p></div></div>
+        <div class="feature-card"><div class="feature-icon">🛡</div><div><h3>Secure Process</h3><p>Privacy-focused handling and safer workflow.</p></div></div>
+        <div class="feature-card"><div class="feature-icon">⚡</div><div><h3>Fast Delivery</h3><p>Quick turnaround with a more premium service feel.</p></div></div>
+        <div class="feature-card"><div class="feature-icon">⚙</div><div><h3>Automated Systems</h3><p>Clean and scalable automation support.</p></div></div>
+        <div class="feature-card"><div class="feature-icon">✦</div><div><h3>Expert Handling</h3><p>Professional guidance for major platform work.</p></div></div>
+        <div class="feature-card"><div class="feature-icon">★</div><div><h3>High Success Rate</h3><p>Strong client trust backed by real completed work.</p></div></div>
       </div>
     </section>
 
@@ -211,26 +121,11 @@
       </div>
 
       <div class="contact-grid">
-        <a class="contact-card" href="https://t.me/fensat" target="_blank" rel="noopener">
-          <div class="contact-icon">✈</div>
-          <div><span>Direct Expert</span><strong>Telegram</strong><small>@fensat</small></div>
-        </a>
-        <a class="contact-card" href="https://instagram.com/myeg" target="_blank" rel="noopener">
-          <div class="contact-icon">◎</div>
-          <div><span>Follow Us</span><strong>Instagram</strong><small>@myeg</small></div>
-        </a>
-        <a class="contact-card" href="https://wa.me/919635179847" target="_blank" rel="noopener">
-          <div class="contact-icon">◉</div>
-          <div><span>Quick Chat</span><strong>WhatsApp</strong><small>+91 9635179847</small></div>
-        </a>
-        <a class="contact-card" href="mailto:nayemfarhad07@gmail.com">
-          <div class="contact-icon">✉</div>
-          <div><span>Business Inquiries</span><strong>Email</strong><small>nayemfarhad07@gmail.com</small></div>
-        </a>
-        <a class="contact-card" href="https://t.me/stadle" target="_blank" rel="noopener">
-          <div class="contact-icon">◈</div>
-          <div><span>Updates & News</span><strong>Info Channel</strong><small>@stadle</small></div>
-        </a>
+        <a class="contact-card" href="https://t.me/fensat" target="_blank" rel="noopener"><div class="contact-icon">✈</div><div><span>Direct Expert</span><strong>Telegram</strong><small>@fensat</small></div></a>
+        <a class="contact-card" href="https://instagram.com/myeg" target="_blank" rel="noopener"><div class="contact-icon">◎</div><div><span>Follow Us</span><strong>Instagram</strong><small>@myeg</small></div></a>
+        <a class="contact-card" href="https://wa.me/919635179847" target="_blank" rel="noopener"><div class="contact-icon">◉</div><div><span>Quick Chat</span><strong>WhatsApp</strong><small>+91 9635179847</small></div></a>
+        <a class="contact-card" href="mailto:nayemfarhad07@gmail.com"><div class="contact-icon">✉</div><div><span>Business Inquiries</span><strong>Email</strong><small>nayemfarhad07@gmail.com</small></div></a>
+        <a class="contact-card" href="https://t.me/stadle" target="_blank" rel="noopener"><div class="contact-icon">◈</div><div><span>Updates & News</span><strong>Info Channel</strong><small>@stadle</small></div></a>
       </div>
     </section>
 

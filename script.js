@@ -15,12 +15,10 @@ const observer = new IntersectionObserver((entries) => {
     const el = entry.target;
     if (el.dataset.done === 'true') return;
     el.dataset.done = 'true';
-
     const target = parseInt(el.dataset.target, 10);
     const suffix = el.dataset.suffix || '';
     const duration = 1800;
     const startTime = performance.now();
-
     const update = (now) => {
       const progress = Math.min((now - startTime) / duration, 1);
       const ease = 1 - Math.pow(1 - progress, 3);
@@ -32,5 +30,13 @@ const observer = new IntersectionObserver((entries) => {
     requestAnimationFrame(update);
   });
 }, { threshold: 0.35 });
-
 counters.forEach((c) => observer.observe(c));
+
+document.getElementById('exploreBtn')?.addEventListener('click', () => {
+  const target = document.getElementById('services');
+  if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+document.getElementById('contactBtn')?.addEventListener('click', () => {
+  window.open('https://t.me/fensat', '_blank');
+});
