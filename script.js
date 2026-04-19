@@ -40,3 +40,13 @@ document.getElementById('exploreBtn')?.addEventListener('click', () => {
 document.getElementById('contactBtn')?.addEventListener('click', () => {
   window.open('https://t.me/fensat', '_blank');
 });
+
+document.querySelectorAll('.glow-card').forEach((card) => {
+  card.addEventListener('mousemove', (e) => {
+    const glow = card.querySelector('.glow-spot');
+    if (!glow) return;
+    const rect = card.getBoundingClientRect();
+    glow.style.left = (e.clientX - rect.left) + 'px';
+    glow.style.top = (e.clientY - rect.top) + 'px';
+  });
+});
