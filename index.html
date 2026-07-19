@@ -1,278 +1,1699 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ZEX SM Expert | Premium Digital Services</title>
-<meta name="description" content="ZEX SM Expert - premium digital services, recovery, verification, AdTrack, MM service, crypto exchange and social media support.">
-<link rel="icon" href="assets/zex-logo.jpg">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ZEX SM Expert | Premium Digital Services</title>
+    <meta name="title" content="ZEX SM Expert | Premium Digital Services">
+    <meta name="description" content="ZEX SM Expert - premium digital services, recovery, verification, AdTrack, MM service, crypto exchange and social media support since 2022.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ZEX SM EXPERT">
+    <meta property="og:title" content="ZEX SM Expert — Social Media Support & Recovery">
+    <meta property="og:description" content="Premium digital services, recovery, verification, growth and trusted deal support.">
+
+    <meta name="theme-color" content="#19bfff">
+    <link rel="icon" href="assets/zex-logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* --- SUPER GLOW & POP ANIMATIONS (ADD THIS TO BOTTOM OF STYLE) --- */
+
+.card.parallax-fast {
+    will-change: transform;
+    /* We don't put transition on transform here because 
+       it conflicts with the JS scroll loop. 
+       The scroll loop handles the smoothness. */
+}
+
+    /* 1. UNIVERSAL CLICK EFFECT (Tactile Feedback) */
+    .card, .testimonial-card, .trust-card, .work-long-card, .group\/item {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; /* Bouncy Physics */
+    }
+    .card:active, .testimonial-card:active, .trust-card:active, .work-long-card:active, .group\/item:active {
+        transform: scale(0.96) !important; /* Shrink on Click */
+        transition: transform 0.1s;
+    }
+
+    /* 2. SERVICE CARDS (Color-Matched Glows) */
+    .card:hover {
+        transform: translateY(-15px) scale(1.02) !important;
+        background: #111 !important;
+        border-color: rgba(255,255,255,0.4) !important;
+        z-index: 50 !important;
+    }
+    /* Specific Glow Colors per Platform */
+    .card.insta:hover { box-shadow: 0 25px 50px -12px rgba(0,0,0,0.9), 0 0 40px rgba(225, 48, 108, 0.3) !important; border-color: #E1306C !important; }
+    .card.facebook:hover { box-shadow: 0 25px 50px -12px rgba(0,0,0,0.9), 0 0 40px rgba(24, 119, 242, 0.3) !important; border-color: #1877F2 !important; }
+    .card.wa:hover { box-shadow: 0 25px 50px -12px rgba(0,0,0,0.9), 0 0 40px rgba(37, 211, 102, 0.3) !important; border-color: #25D366 !important; }
+    .card.telegram:hover { box-shadow: 0 25px 50px -12px rgba(0,0,0,0.9), 0 0 40px rgba(34, 158, 217, 0.3) !important; border-color: #229ED9 !important; }
+    .card.youtube:hover { box-shadow: 0 25px 50px -12px rgba(0,0,0,0.9), 0 0 40px rgba(255, 0, 0, 0.3) !important; border-color: #FF0000 !important; }
+
+    /* 3. TESTIMONIAL CARDS (Golden Glow) */
+    .testimonial-card:hover {
+        transform: translateY(-10px) !important;
+        border-color: #FFB800 !important;
+        background: linear-gradient(145deg, #1a1a1a 0%, #050505 100%) !important;
+        box-shadow: 0 20px 40px -10px rgba(0,0,0,0.8), 0 0 25px rgba(255, 184, 0, 0.15) !important;
+    }
+
+    /* 4. TRUST/SECURITY CARDS (Theme Glow) */
+    .trust-card:hover {
+        transform: translateY(-10px) !important;
+        z-index: 20;
+    }
+    .trust-card.orange:hover {
+        border-color: #FF5500 !important;
+        box-shadow: 0 30px 60px -15px rgba(0,0,0,0.9), 0 0 35px rgba(255, 85, 0, 0.25) !important;
+    }
+    .trust-card.metal:hover {
+        border-color: white !important;
+        box-shadow: 0 30px 60px -15px rgba(0,0,0,0.9), 0 0 35px rgba(255, 255, 255, 0.15) !important;
+    }
+
+    /* 5. PAST WORK CARDS (White Lift) */
+    .work-long-card:hover {
+        transform: translateY(-15px) !important;
+        border-color: rgba(255,255,255,0.5) !important;
+        box-shadow: 0 30px 50px -10px rgba(0,0,0,0.9), 0 0 20px rgba(255,255,255,0.1) !important;
+    }
+
+    /* 6. CONTACT LIST ITEMS (Orange Highlight) */
+    .group\/item:hover {
+        transform: translateY(-5px) scale(1.02) !important;
+        background: linear-gradient(90deg, rgba(255,255,255,0.05), rgba(255,85,0,0.05)) !important;
+        border-color: rgba(255,85,0,0.5) !important;
+        box-shadow: 0 10px 30px -5px rgba(0,0,0,0.5), 0 0 15px rgba(255,85,0,0.15) !important;
+        z-index: 10;
+    }
+    /* Make the icons inside pop too */
+    .group\/item:hover div {
+        border-color: rgba(255,85,0,0.4);
+    }
+
+    /* --- PARALLAX UTILITIES --- */
+.parallax-layer {
+    will-change: transform;
+    transition: transform 0.1s cubic-bezier(0,0,0,1); /* Smoothing factor */
+}
+
+    :root {
+        --bg-dark: #020202;
+        --glass-border: rgba(255, 255, 255, 0.15);
+        --primary-orange: #FF5500;
+        --metal-grad: linear-gradient(180deg, #FFFFFF 0%, #E0E0E0 40%, #909090 100%);
+        
+        /* --- 1. UPDATED NEON GLOWS (High Saturation) --- */
+        --insta-glow: radial-gradient(circle at top right, #833AB4, #E1306C, transparent 60%);
+        --fb-glow: radial-gradient(circle at top right, #00C6FF, #0072FF, transparent 60%);
+        --wa-glow: radial-gradient(circle at top right, #00FF88, #00CC44, transparent 60%);
+        --tg-glow: radial-gradient(circle at top right, #2AABEE, #229ED9, transparent 60%);
+        --yt-glow: radial-gradient(circle at top right, #FF0000, #FF4444, transparent 60%);
+        
+        /* Trust Section Specifics */
+        --trust-green-glow: rgba(52, 211, 153, 0.2);
+        --trust-blue-glow: rgba(59, 130, 246, 0.2);
+    }
+
+    /* --- GLOBAL FIXES --- */
+    html, body { width: 100%; max-width: 100%; overflow-x: hidden; margin: 0; padding: 0; -webkit-text-size-adjust: 100%; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-dark); color: white; position: relative; }
+
+    /* UTILITIES */
+    .hero-liquid-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transform: rotate(180deg); filter: brightness(0.8) blur(18px) grayscale(100%); opacity: 1; pointer-events: none; z-index: 0; }
+    .text-metal { background: var(--metal-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 30px rgba(255, 255, 255, 0.15); }
+    .bg-noise { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 50; mix-blend-mode: overlay; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* --- ANIMATIONS --- */
+    @keyframes float { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-12px) rotate(1deg); } }
+    @keyframes twinkle { 0%, 100% { opacity: 0.3; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.2) rotate(45deg); } }
+    
+    /* Marquee Animations (Opposite Directions) */
+    @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @keyframes scroll-right { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+    
+    .animate-float { animation: float 8s ease-in-out infinite; }
+    
+    /* Marquee Containers */
+    .animate-marquee, .work-track { display: flex; gap: 24px; width: max-content; will-change: transform; }
+    .animate-marquee { animation: scroll-left 50s linear infinite; }
+    .work-track { animation: scroll-right 50s linear infinite; }
+    
+    .animate-marquee:hover, .work-track:hover { animation-play-state: paused; }
+
+    /* --- 3D GLASS CARDS --- */
+    .card {
+        /* Brighter Background Gradient */
+        background: linear-gradient(160deg, #1a1a1a 0%, #050505 100%);
+        border-radius: 28px;
+        padding: 32px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 340px; 
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    .card:hover { 
+        transform: translateY(-10px) scale(1.02); 
+        box-shadow: 0 40px 80px -20px rgba(0,0,0,0.8), 0 0 0 1px rgba(255, 255, 255, 0.3); 
+        background: linear-gradient(160deg, #222 0%, #0a0a0a 100%);
+        z-index: 10; 
+    }
+    
+    .glow-layer { position: absolute; top: -30%; right: -30%; width: 150%; height: 150%; opacity: 0.2; filter: blur(60px); pointer-events: none; transition: opacity 0.5s ease; }
+    .card:hover .glow-layer { opacity: 0.6; }
+    
+    /* Theme Glow Assignments */
+    .card.insta .glow-layer { background: var(--insta-glow); }
+    .card.facebook .glow-layer { background: var(--fb-glow); }
+    .card.wa .glow-layer { background: var(--wa-glow); }
+    .card.telegram .glow-layer { background: var(--tg-glow); }
+    .card.youtube .glow-layer { background: var(--yt-glow); }
+
+    /* Star Effect */
+    .stars-wrapper { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+    .star { position: absolute; fill: white; animation: twinkle 4s infinite ease-in-out; }
+
+    /* 3D Glass Icon Container */
+    .glass-icon-container {
+        width: 64px; height: 64px;
+        border-radius: 20px;
+        display: flex; align-items: center; justify-content: center;
+        background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.01));
+        border: 1px solid rgba(255,255,255,0.1);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 10px 25px -5px rgba(0,0,0,0.6);
+        margin-bottom: 24px;
+        backdrop-filter: blur(12px);
+        transition: all 0.3s ease;
+    }
+    .card:hover .glass-icon-container { border-color: rgba(255,255,255,0.3); transform: scale(1.05); box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 15px 35px -5px rgba(0,0,0,0.7); }
+
+    /* Typography */
+    .card h3 { font-size: 24px; font-weight: 800; margin-bottom: 10px; color: white; letter-spacing: -0.5px; }
+    .card p { font-size: 14px; line-height: 1.6; color: #a1a1aa; font-weight: 500; margin-bottom: 20px; }
+
+    /* --- FEATURE LIST --- */
+    .feature-list { list-style: none !important; padding: 0 !important; margin: 0 !important; display: flex; flex-direction: column; gap: 12px; margin-top: auto; }
+    .list-item { display: flex !important; flex-direction: row !important; align-items: center !important; justify-content: space-between !important; flex-wrap: nowrap !important; padding: 12px 14px; border-radius: 12px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06); transition: all 0.2s; }
+    .list-item:hover { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.2); }
+    .list-left { display: flex; align-items: center; gap: 12px; min-width: 0; flex-shrink: 1; font-weight: 700; font-size: 13px; color: white; }
+    .list-right { display: flex; align-items: center; gap: 4px; flex-shrink: 0; white-space: nowrap; margin-left: 10px; font-size: 11px; font-weight: 700; color: #00FF88; text-transform: uppercase; }
+
+    /* --- HYPER-REALISTIC TESTIMONIAL CARD --- */
+    .testimonial-card {
+        width: 400px;
+        background: linear-gradient(145deg, #111111 0%, #050505 100%);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        box-shadow: 0 10px 30px -10px rgba(0,0,0,0.8);
+        transition: transform 0.3s ease, border-color 0.3s ease;
+        flex-shrink: 0;
+    }
+    .testimonial-card:hover { transform: translateY(-5px); border-color: rgba(255, 85, 0, 0.3); background: linear-gradient(145deg, #161616 0%, #080808 100%); }
+    .t-header { display: flex; align-items: center; gap: 12px; }
+    .t-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #333, #111); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-weight: 700; color: white; font-size: 14px; }
+    .t-info h4 { color: white; font-size: 14px; font-weight: 700; margin: 0; line-height: 1.2; }
+    .t-info span { color: #666; font-size: 12px; font-weight: 500; }
+    .t-stars { display: flex; gap: 4px; margin-left: auto; }
+    .t-star { width: 14px; height: 14px; fill: #FFB800; color: #FFB800; }
+    .t-content { color: #a1a1aa; font-size: 14px; line-height: 1.6; font-weight: 400; }
+
+    /* --- PAST WORK CARDS --- */
+    .work-long-card { width: 300px; height: 550px; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); position: relative; flex-shrink: 0; background: #111; }
+    .work-long-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .work-long-card:hover img { transform: scale(1.05); }
+
+    /* OTHER STYLES */
+    .btn-furnace { background: linear-gradient(180deg, #FF6B00 0%, #E63B00 100%); box-shadow: 0 0 0 1px rgba(255, 100, 0, 0.5), 0 10px 30px -10px rgba(255, 60, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.4); transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .btn-furnace:hover { transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(255, 100, 0, 0.8), 0 20px 40px -10px rgba(255, 60, 0, 0.7), inset 0 1px 0 rgba(255,255,255,0.5); }
+    
+    .icon-container { position: absolute; z-index: 10; }
+    .icon-card { display: flex; align-items: center; justify-content: center; position: relative; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255,255,255,0.6), inset 0 -2px 5px rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); transition: transform 0.5s; }
+    .icon-card:hover { transform: scale(1.1); }
+    .icon-card .gloss { position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(135deg, rgba(255,255,255,0.4), transparent 60%); opacity: 0.5; pointer-events: none; }
+    .tab-btn { transition: all 0.3s ease; }
+
+    /* --- TRUST / SECURITY SECTION --- */
+    .trust-card { border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; padding: 32px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-height: 340px; background: #0a0a0a; box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5); transition: transform 0.4s ease, border-color 0.4s ease; }
+    .trust-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.2); }
+    .trust-card.green { background: linear-gradient(180deg, rgba(16, 185, 129, 0.05) 0%, #050505 100%); }
+    .trust-card.blue { background: linear-gradient(180deg, rgba(59, 130, 246, 0.05) 0%, #050505 100%); }
+    .circuit-lines { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(52, 211, 153, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(52, 211, 153, 0.03) 1px, transparent 1px); background-size: 40px 40px; mask-image: radial-gradient(circle at center, black 30%, transparent 80%); z-index: 1; pointer-events: none; }
+    .green-glow-bg { position: absolute; width: 120px; height: 120px; background: radial-gradient(circle, var(--trust-green-glow) 0%, transparent 70%); filter: blur(30px); z-index: 0; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+    .blue-glow-bg { position: absolute; width: 150px; height: 150px; background: radial-gradient(circle, var(--trust-blue-glow) 0%, transparent 70%); z-index: 0; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+    .css-lock { position: relative; width: 100px; height: 120px; z-index: 2; margin: 0 auto; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5)); }
+    .lock-shackle { width: 56px; height: 50px; border: 8px solid #94a3b8; border-bottom: 0; border-radius: 30px 30px 0 0; margin: 0 auto; position: relative; top: 15px; background: linear-gradient(to right, #475569, #cbd5e1 50%, #475569); -webkit-background-clip: border-box; background-clip: border-box; }
+    .lock-body { width: 100px; height: 80px; background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); border-radius: 18px; position: relative; display: flex; justify-content: center; align-items: center; box-shadow: inset 0 1px 0 rgba(255,255,255,0.3); border: 1px solid rgba(255,255,255,0.1); }
+    .orbit-container { position: absolute; inset: 0; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+    .ring { position: absolute; border: 1px solid rgba(255,255,255,0.03); border-radius: 50%; }
+    .ring-1 { width: 180px; height: 180px; animation: spin 20s linear infinite; }
+    .ring-2 { width: 320px; height: 320px; animation: spin 35s linear infinite reverse; }
+    .ring-3 { width: 500px; height: 500px; border-color: rgba(255,255,255,0.02); }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .logo-item { position: absolute; color: rgba(255,255,255,0.3); font-weight: 600; font-size: 0.8rem; display: flex; align-items: center; gap: 6px; padding: 6px 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; backdrop-filter: blur(2px); transition: all 0.3s; }
+    .logo-item:hover { color: white; background: rgba(255,255,255,0.1); transform: scale(1.1); z-index: 10; border-color: rgba(255,255,255,0.2); }
+    .center-circle { width: 70px; height: 70px; border-radius: 50%; background: #0b0e13; border: 1px solid #3b82f6; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 30px rgba(59, 130, 246, 0.3); position: relative; z-index: 5; }
+    .check-badge { position: absolute; top: -2px; right: -2px; background: #60a5fa; color: #000; border-radius: 50%; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; border: 2px solid #0b0e13; }
+    .mouse-cursor { position: absolute; bottom: -15px; right: -15px; fill: white; z-index: 20; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5)); }
+
+    /* --- WALLET CARD --- */
+    .wallet-card-container { background-color: #0a0a0a; width: 100%; max-width: 400px; padding: 32px 24px 40px; border-radius: 28px; position: relative; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 20px 50px rgba(0, 0, 0, 0.5); text-align: center; }
+    .wallet-glow { position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 250px; height: 150px; background: radial-gradient(50% 50% at 50% 50%, rgba(139, 92, 246, 0.4) 0%, transparent 100%); filter: blur(35px); pointer-events: none; z-index: 0; }
+    .wallet-selector { background-color: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 12px 10px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; flex: 1; transition: all 0.2s ease; }
+    .wallet-selector:hover { background-color: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.2); transform: translateY(-2px); }
+    .wallet-selector:active { transform: scale(0.98); }
+    .icon-box { width: 24px; height: 24px; border-radius: 6px; display: flex; justify-content: center; align-items: center; overflow: hidden; flex-shrink: 0; }
+
+    /* --- ULTRA CTA SECTION --- */
+    .ultra-cta-section {
+        padding: 80px 24px;
+        background: #020202;
+        display: flex; justify-content: center;
+        position: relative; overflow: hidden;
+        border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .ultra-cta-card {
+        width: 100%; max-width: 1200px;
+        min-height: 500px;
+        border-radius: 32px;
+        background: linear-gradient(135deg, #0f0f0f 0%, #050505 100%);
+        position: relative; overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.9);
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        text-align: center;
+        padding: 40px;
+    }
+
+    /* The Aurora/Horizon Effect */
+    .cta-horizon-glow {
+        position: absolute; bottom: -100px; left: 50%; transform: translateX(-50%);
+        width: 120%; height: 400px;
+        background: radial-gradient(ellipse at center, rgba(255, 85, 0, 0.25) 0%, rgba(255, 60, 0, 0.05) 50%, transparent 80%);
+        filter: blur(80px); pointer-events: none; z-index: 0;
+        animation: pulse-glow 8s ease-in-out infinite alternate;
+    }
+    @keyframes pulse-glow { from { opacity: 0.6; transform: translateX(-50%) scale(1); } to { opacity: 1; transform: translateX(-50%) scale(1.1); } }
+
+    .cta-grid-pattern {
+        position: absolute; inset: 0;
+        background-image: 
+            linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+        background-size: 80px 80px;
+        mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+        pointer-events: none; z-index: 0;
+    }
+
+    /* FADED BACKGROUND LOGO */
+    .cta-left-bg {
+        position: absolute;
+        top: 50%;
+        left: -5%; 
+        transform: translateY(-50%) rotate(-10deg);
+        width: 600px; 
+        height: 600px;
+        background-image: url('https://i.ibb.co/jNrp3qt/IMG-20260130-120844.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 0.08; 
+        pointer-events: none;
+        z-index: 1;
+        filter: blur(1px);
+    }
+
+    .cta-signal-badge {
+        display: inline-flex; align-items: center; gap: 8px;
+        background: rgba(255, 85, 0, 0.08); border: 1px solid rgba(255, 85, 0, 0.2);
+        padding: 6px 14px; border-radius: 100px;
+        color: #ff6b26; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
+        margin-bottom: 32px; backdrop-filter: blur(10px);
+        box-shadow: 0 0 20px rgba(255,85,0,0.1);
+        position: relative; z-index: 2;
+    }
+    .signal-dot { width: 6px; height: 6px; background: #ff6b26; border-radius: 50%; box-shadow: 0 0 10px #ff6b26; animate: pulse 2s infinite; }
+
+    .cta-headline {
+        font-size: 48px; md:font-size: 72px; font-weight: 800; letter-spacing: -2px;
+        line-height: 1; color: white; margin-bottom: 24px; max-width: 800px;
+        position: relative; z-index: 2;
+        text-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        background: linear-gradient(180deg, #fff 0%, #a1a1aa 100%);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    
+    .cta-subline {
+        font-size: 18px; color: #a1a1aa; max-width: 500px; margin-bottom: 48px;
+        line-height: 1.6; position: relative; z-index: 2;
+    }
+
+    .cta-actions {
+        display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 2;
+    }
+    
+    .cta-btn-primary {
+        padding: 16px 40px; border-radius: 100px; font-weight: 700; font-size: 16px;
+        background: white; color: black; border: none;
+        transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+        box-shadow: 0 0 20px rgba(255,255,255,0.1);
+    }
+    .cta-btn-primary:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(255,255,255,0.3); }
+
+    .cta-btn-secondary {
+        padding: 16px 40px; border-radius: 100px; font-weight: 700; font-size: 16px;
+        background: rgba(255,255,255,0.03); color: white; border: 1px solid rgba(255,255,255,0.1);
+        transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); backdrop-filter: blur(10px);
+    }
+    .cta-btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.3); }
+
+    /* --- SPLIT FOOTER STYLES --- */
+    .footer-split-wrapper {
+        background: #020202;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    
+    .footer-watermark-text {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* --- ZEX INTRO SPLASH (preserved from ZEX site, plays before page reveal) --- */
+    #intro { position: fixed; inset: 0; background: #020202; z-index: 999; display: grid; place-items: center; animation: introHide .8s ease forwards; animation-delay: 2.6s; }
+    .intro-box { text-align: center; animation: introMove .9s ease forwards; animation-delay: 1.8s; }
+    .intro-box img { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 48px rgba(255,85,0,.35); animation: logoPop 1s ease forwards; }
+    .intro-box h1 { margin: 44px 0 0; font-size: clamp(28px,6vw,60px); letter-spacing: .08em; color: #fff; font-weight: 800; opacity: 0; animation: textSlide 1s ease forwards; animation-delay: .55s; }
+    @keyframes logoPop { from { transform: scale(.55); opacity: 0; filter: blur(18px);} to { transform: scale(1); opacity: 1; } }
+    @keyframes textSlide { from { opacity: 0; transform: translateX(80px); filter: blur(10px);} to { opacity: 1; transform: translateX(0);} }
+    @keyframes introMove { to { transform: translate(-38vw,-36vh) scale(.34); } }
+    @keyframes introHide { to { opacity: 0; visibility: hidden; pointer-events: none; } }
+    @media (max-width:720px){ .intro-box img{width:84px;height:84px} .intro-box h1{font-size:30px;margin-top:36px} }
+
+    /* --- Proof / portfolio gallery tiles (reuses design language of .card / .work-long-card) --- */
+    .proof-tile { display:block; border-radius: 20px; overflow:hidden; border:1px solid rgba(255,255,255,0.1); background:#111; position:relative; transition: all .4s cubic-bezier(0.25,0.8,0.25,1); }
+    .proof-tile:hover { transform: translateY(-8px); border-color: rgba(255,85,0,0.4); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8), 0 0 30px rgba(255,85,0,0.15); }
+    .proof-tile img { width:100%; height:100%; object-fit:cover; display:block; transition: transform .5s ease; }
+    .proof-tile:hover img { transform: scale(1.06); }
+</style>
+
 </head>
 <body>
-<div id="intro">
-  <div class="intro-box">
-    <img src="assets/zex-logo.jpg" alt="ZEX Logo">
-    <h1>ZEX SM EXPERT</h1>
-  </div>
+
+    <div id="intro">
+        <div class="intro-box">
+            <img src="assets/zex-logo.jpg" alt="ZEX Logo">
+            <h1>ZEX SM EXPERT</h1>
+        </div>
+    </div>
+
+    <div class="bg-noise"></div>
+
+                    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-[750px] 
+                bg-gradient-to-b from-white/10 to-black/60 
+                backdrop-blur-2xl border border-white/10 rounded-full 
+                shadow-[0_25px_50px_-12px_rgba(0,0,0,0.9),inset_0_1px_0_rgba(255,255,255,0.2)] 
+                transition-all duration-300 hover:scale-[1.01] hover:border-white/20">
+        <div class="h-16 px-3 flex items-center justify-between">
+
+            <a href="#home" class="flex items-center gap-2 md:gap-3 pl-1 md:pl-2 min-w-0">
+                <img src="assets/zex-logo.jpg"
+                     alt="ZEX Logo"
+                     class="w-9 h-9 md:w-11 md:h-11 rounded-full object-cover flex-shrink-0 drop-shadow-md">
+
+                <span class="text-1xl md:text-1xl font-extrabold tracking-tighter text-metal drop-shadow-md whitespace-nowrap">ZEX SM EXPERT</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-5 text-xs font-bold text-gray-300 bg-black/20 px-6 py-2.5 rounded-full border border-white/5 shadow-inner whitespace-nowrap">
+                <a href="#services" class="hover:text-white transition-all">Services</a>
+                <a href="#adtrack" class="hover:text-white transition-all">AdTrack</a>
+                <a href="#portfolio" class="hover:text-white transition-all">Portfolio</a>
+                <a href="#vouches" class="hover:text-white transition-all">Vouches</a>
+            </div>
+
+            <div class="flex items-center gap-2 pr-1">
+
+                <a href="https://t.me/fensat" target="_blank" rel="noopener" class="flex items-center justify-center rounded-full btn-furnace text-white font-bold shadow-lg h-9 w-9 md:w-auto md:h-auto md:px-6 md:py-2.5 overflow-hidden whitespace-nowrap">
+                    <svg class="w-5 h-5 md:hidden fill-white mr-[2px] mt-[1px]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.92,3.16 C22.13,2.33 21.36,1.69 20.62,2.02 L2.45,9.66 C1.70,9.97 1.74,11.02 2.54,11.29 L6.99,12.75 L17.58,6.06 C17.72,5.97 17.88,6.17 17.75,6.29 L9.13,14.07 L9.11,18.42 C9.11,18.94 9.69,19.22 10.07,18.88 L12.56,16.64 L17.51,20.29 C18.23,20.82 19.24,20.36 19.39,19.48 L21.92,3.16 Z"/>
+                    </svg>
+                    <span class="hidden md:block text-xs">Contact @fensat</span>
+                </a>
+
+                <div class="hidden md:block h-5 w-px bg-white/10 mx-1"></div>
+
+                <a href="#contact" class="hidden md:flex w-9 h-9 items-center justify-center rounded-full border border-white/10 shadow-lg hover:border-white/30 hover:scale-105 active:scale-95 transition-all group"
+                        style="background: linear-gradient(180deg, #333 0%, #000 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);">
+                    <i data-lucide="arrow-left-right" width="16" height="16" class="text-white group-hover:rotate-12 transition-transform"></i>
+                </a>
+                <div class="hidden md:block h-5 w-px bg-white/10 mx-1"></div>
+                <button onclick="toggleMobileMenu()" class="md:hidden w-9 h-9 flex items-center justify-center rounded-full text-white hover:bg-white/10 transition-colors ml-1">
+                    <i data-lucide="menu" width="20" height="20"></i>
+                </button>
+
+            </div>
+
+        </div>
+    </nav>
+
+
+<div id="mobileMenu" class="fixed inset-0 z-40 hidden opacity-0 transition-opacity duration-300">
+
+    <div class="absolute inset-0 bg-[#020202]/95 backdrop-blur-xl" onclick="toggleMobileMenu()"></div>
+
+    <div class="relative z-50 h-full flex flex-col items-center justify-center gap-5 p-6 animate-fade-in-up">
+
+        <a href="#services" onclick="toggleMobileMenu()" class="text-3xl font-extrabold text-white hover:text-orange-500 transition-colors tracking-tight">Services</a>
+        <a href="#adtrack" onclick="toggleMobileMenu()" class="text-3xl font-extrabold text-white hover:text-orange-500 transition-colors tracking-tight">AdTrack</a>
+        <a href="#portfolio" onclick="toggleMobileMenu()" class="text-3xl font-extrabold text-white hover:text-orange-500 transition-colors tracking-tight">Portfolio</a>
+        <a href="#vouches" onclick="toggleMobileMenu()" class="text-3xl font-extrabold text-white hover:text-orange-500 transition-colors tracking-tight">Vouches</a>
+        <a href="#tos" onclick="toggleMobileMenu()" class="text-3xl font-extrabold text-white hover:text-orange-500 transition-colors tracking-tight">Trust</a>
+
+        <a href="#contact" onclick="toggleMobileMenu()" class="w-full max-w-[280px] py-4 rounded-full btn-furnace text-white font-bold text-lg shadow-2xl shadow-orange-500/20 active:scale-95 transition-transform flex items-center justify-center gap-3">
+            <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.92,3.16 C22.13,2.33 21.36,1.69 20.62,2.02 L2.45,9.66 C1.70,9.97 1.74,11.02 2.54,11.29 L6.99,12.75 L17.58,6.06 C17.72,5.97 17.88,6.17 17.75,6.29 L9.13,14.07 L9.11,18.42 C9.11,18.94 9.69,19.22 10.07,18.88 L12.56,16.64 L17.51,20.29 C18.23,20.82 19.24,20.36 19.39,19.48 L21.92,3.16 Z"/>
+                    </svg>
+            Contact @fensat
+        </a>
+        <div class="w-16 h-1 bg-white/10 rounded-full my-2"></div>
+
+        <a href="https://t.me/zexmm" target="_blank" rel="noopener" class="group w-full max-w-[280px] py-4 rounded-full relative overflow-hidden transition-all active:scale-95 hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] flex items-center justify-center gap-3"
+        style="
+            background: linear-gradient(180deg, #5c5c5c 0%, #1a1a1a 100%);
+            box-shadow:
+                0 15px 35px -5px rgba(0,0,0,0.8),
+                inset 0 1px 0 rgba(255,255,255,0.35),
+                inset 0 -2px 5px rgba(0,0,0,0.5);
+            border: 1px solid #4a4a4a;
+        ">
+    <i data-lucide="shield-check" width="24" height="24" class="text-white drop-shadow-md"></i>
+    <span class="text-white font-bold text-lg tracking-wide font-sans drop-shadow-md">
+        MM Service
+    </span>
+    <div class="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none"></div>
+</a>
+
+        <button onclick="toggleMobileMenu()" class="mt-4 w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 transition-all hover:rotate-90">
+            <i data-lucide="x" width="24" height="24"></i>
+        </button>
+
+    </div>
 </div>
 
-<div class="background-text">Powered By @myeg • ZEX SM Expert • @fensat • @igtick • Since 2022 •</div>
-<div class="orb orb-one"></div>
-<div class="orb orb-two"></div>
 
-<header>
-  <a class="brand" href="#home">
-    <img src="assets/zex-logo.jpg" alt="ZEX Logo">
-    <strong>ZEX <span>SM Expert</span></strong>
-  </a>
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#adtrack">AdTrack</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#vouches">Vouches</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <a class="header-btn" href="https://t.me/fensat" target="_blank" rel="noopener">Contact</a>
-</header>
 
-<main>
-<section id="home" class="hero">
-  <div class="hero-copy">
-    <span class="tag">Premium Digital Services Since 2022</span>
-    <h2>Social Media Recovery, Verification, Growth & Trusted Deal Support.</h2>
-    <p>ZEX SM Expert provides professional digital assistance for Instagram, Facebook, WhatsApp, Telegram, Meta Verified, takedowns, username claims, AdTrack ads, crypto exchange, MM service and premium websites.</p>
-    <div class="hero-actions">
-      <a class="primary" href="https://t.me/fensat" target="_blank" rel="noopener">Contact @fensat</a>
-      <a class="secondary" href="#portfolio">View Portfolio</a>
+    <main>
+    <div id="contactFormModal" class="fixed inset-0 z-[100] hidden items-center justify-center px-4 backdrop-blur-md bg-black/40">
+        <div class="relative w-full max-w-lg bg-[#0a0a0a] border border-white/10 rounded-[32px] overflow-hidden shadow-2xl animate-fade-in max-h-[90vh] overflow-y-auto">
+            <div class="absolute -top-24 -right-24 w-64 h-64 bg-[#FF5500]/20 blur-[80px] pointer-events-none"></div>
+
+            <div class="p-8 pb-0 flex justify-between items-start relative z-10">
+                <div>
+                    <h2 class="text-3xl font-extrabold text-white tracking-tight">Send a Message</h2>
+                    <p class="text-gray-400 text-sm mt-1">Fill in the details below — this opens your email app addressed to nayemfarhad07@gmail.com.</p>
+                </div>
+                <button
+  type="button"
+  onclick="toggleContactForm(false)"
+  class="p-2 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
+>
+  <i data-lucide="x" width="20" height="20"></i>
+</button>
+            </div>
+
+            <form id="inquiryForm" class="p-8 space-y-4 relative z-10">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Name</label>
+                        <input type="text" name="name" placeholder="Your Name" required class="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-white focus:outline-none focus:border-[#FF5500]/50 transition-colors">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Telegram ID</label>
+                        <input type="text" name="telegram" placeholder="@username" required class="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-white focus:outline-none focus:border-[#FF5500]/50 transition-colors">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Phone (WhatsApp)</label>
+                        <input type="tel" name="phone" placeholder="+1 234..." class="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-white focus:outline-none focus:border-[#FF5500]/50 transition-colors">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Budget ($)</label>
+                        <input type="number" name="budget" placeholder="Type your budget" min="0" inputmode="numeric" pattern="[0-9]*" oninput="this.value = this.value.replace(/[^0-9]/g, '')" class="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-white focus:outline-none focus:border-[#FF5500]/50 transition-colors appearance-none">
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Service Required</label>
+                    <div class="relative">
+           <select
+  name="service"
+  class="w-full bg-[#0a0a0a] text-white border border-white/10 rounded-lg p-3"
+>
+    <optgroup label="📷 Instagram" class="bg-[#0a0a0a] text-gray-400">
+        <option class="bg-[#0a0a0a] text-white" value="ig_recovery">Recovery (Suspended / Disabled)</option>
+        <option class="bg-[#0a0a0a] text-white" value="ig_takedown">Takedown (Report-based)</option>
+        <option class="bg-[#0a0a0a] text-white" value="ig_meta">Meta Verification</option>
+    </optgroup>
+    <optgroup label="📒 Facebook" class="bg-[#0a0a0a] text-gray-400">
+        <option class="bg-[#0a0a0a] text-white" value="fb_verified">Facebook Verified</option>
+    </optgroup>
+    <optgroup label="📗 WhatsApp" class="bg-[#0a0a0a] text-gray-400">
+        <option class="bg-[#0a0a0a] text-white" value="wa_verified">WhatsApp Verified</option>
+    </optgroup>
+    <optgroup label="✈️ Telegram" class="bg-[#0a0a0a] text-gray-400">
+        <option class="bg-[#0a0a0a] text-white" value="tg_growth">Telegram Growth</option>
+        <option class="bg-[#0a0a0a] text-white" value="tg_adtrack">AdTrack AdBot</option>
+        <option class="bg-[#0a0a0a] text-white" value="tg_assets">Telegram Assets</option>
+    </optgroup>
+    <optgroup label="⚡ Other" class="bg-[#0a0a0a] text-gray-400">
+        <option class="bg-[#0a0a0a] text-white" value="username_claim">Username Claim</option>
+        <option class="bg-[#0a0a0a] text-white" value="crypto_exchange">Crypto Exchange</option>
+        <option class="bg-[#0a0a0a] text-white" value="mm_service">MM Service</option>
+        <option class="bg-[#0a0a0a] text-white" value="website">Website Building</option>
+    </optgroup>
+</select>
+
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Details</label>
+                    <textarea name="details" rows="4" placeholder="Describe your request..." required class="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-white focus:outline-none focus:border-[#FF5500]/50 transition-colors resize-none"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-4 btn-furnace text-white font-bold rounded-2xl shadow-xl shadow-orange-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all">
+                    Submit Request
+                </button>
+            </form>
+        </div>
     </div>
-    <div class="metrics">
-      <div><b>1200+</b><span>Deals & Vouches</span></div>
-      <div><b>20+</b><span>Proof Categories</span></div>
-      <div><b>24/7</b><span>Support Desk</span></div>
-      <div><b>2022</b><span>Working Since</span></div>
+
+    <div id="successModal" class="fixed inset-0 z-[9999] hidden items-center justify-center px-4 backdrop-blur-md bg-black/80 opacity-0 transition-opacity duration-300 ease-out">
+        <div class="relative w-full max-w-sm bg-[#0a0a0a] border border-white/10 rounded-[32px] p-8 text-center shadow-2xl overflow-hidden transform scale-90 transition-transform duration-300 ease-out" id="successContent">
+
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-[#FF5500]/20 blur-[60px] pointer-events-none"></div>
+
+            <div class="relative z-10 mx-auto w-16 h-16 bg-[#FF5500]/10 rounded-full flex items-center justify-center mb-6 border border-[#FF5500]/20">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF5500" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+
+            <div class="relative z-10">
+                <h3 class="text-2xl font-bold text-white mb-2">Message Ready!</h3>
+                <p class="text-gray-400 text-sm mb-6">Your email app should now be open with the details filled in. Hit send to reach us.</p>
+
+                <button onclick="toggleSuccessModal(false)" class="w-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold py-3 rounded-xl transition-colors">
+                    Close
+                </button>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="hero-card">
-    <img src="assets/zex-profile.jpg" alt="ZEX profile">
-  </div>
-</section>
+        <section id="home" class="relative min-h-screen flex flex-col items-center justify-center pt-28 pb-16 overflow-hidden bg-[#020202]">
 
-<section class="section about">
-  <div>
-    <span class="tag">Zex's Telegram Portal</span>
-    <h2>Professional service, real proofs and proper deal procedure.</h2>
-  </div>
-  <div class="text-card">
-    <p>We specialize in social media services and have extensive experience working across multiple platforms. Our team provides professional help for growth, account support and platform-related solutions.</p>
-    <p>With genuine client reviews and proven results, we aim to deliver reliable and trusted service to every client.</p>
-  </div>
-</section>
-
-<section id="services" class="section">
-  <div class="section-head">
-    <span class="tag">Service Categories</span>
-    <h2>Everything separated, clean and premium.</h2>
-    <p>Choose your category and contact directly. Every service follows a proper process.</p>
-  </div>
-  <div class="services-grid">
-    <article class="service-card"><span>01</span><h3>Instagram Recovery</h3><p>Suspended, disabled, non-appeal and account integrity recovery cases.</p></article>
-<article class="service-card"><span>02</span><h3>Instagram Takedown</h3><p>Report-based takedown, fraud/scam profile removal and enforcement cases.</p></article>
-<article class="service-card"><span>03</span><h3>Meta Verification</h3><p>Instagram creator verified, business verified and Meta subscription activation.</p></article>
-<article class="service-card"><span>04</span><h3>Facebook Verified</h3><p>Legacy verified, Meta Verified and Facebook blue badge support.</p></article>
-<article class="service-card"><span>05</span><h3>WhatsApp Verified</h3><p>Business verification, channel verified badge and WhatsApp organic growth.</p></article>
-<article class="service-card"><span>06</span><h3>Telegram Growth</h3><p>Channel growth, Telegram ads, group promotion and campaign placement.</p></article>
-<article class="service-card"><span>07</span><h3>AdTrack AdBot</h3><p>Telegram advertising dashboard, broadcast system and ad campaign workflow.</p></article>
-<article class="service-card"><span>08</span><h3>Username Claim</h3><p>Premium handle checks, username claim planning and digital identity support.</p></article>
-<article class="service-card"><span>09</span><h3>Crypto Exchange</h3><p>INR to dollar and dollar to INR exchange support at good rates.</p></article>
-<article class="service-card"><span>10</span><h3>MM Service</h3><p>Secure middleman procedure via @zexmm. No MM = no deal.</p></article>
-<article class="service-card"><span>11</span><h3>Website Building</h3><p>Premium agency, NGO and business website development.</p></article>
-<article class="service-card"><span>12</span><h3>Telegram Assets</h3><p>NFT usernames, gift assets and username rent support.</p></article>
-  </div>
-</section>
-
-<section id="adtrack" class="section feature-section">
-  <div class="section-head left">
-    <span class="tag">Telegram Advertising</span>
-    <h2>AdTrack — Telegram Ads & AdBot Platform.</h2>
-    <p>AdTrack helps creators, brands and channels run Telegram ad campaigns, broadcasts and promotion workflows.</p>
-  </div>
-  <div class="feature-grid">
-    <div class="feature-copy">
-      <h3>AdTrack Services</h3>
-      <p>Telegram advertising, channel promotion, group promotion, campaign tracking and custom AdBot workflow support.</p>
-      <a class="primary" href="https://t.me/AdTrack" target="_blank" rel="noopener">Open @AdTrack</a>
+    <div class="hero-liquid-bg parallax-layer" data-speed="0.3" data-rotation="180">
+        <img src="https://s12.gifyu.com/images/bkgpg.gif" class="w-full h-full object-cover" alt="Background">
     </div>
-    <div class="single-proof"><a class="proof-card wide-img" href="assets/adtrack-01.jpg" target="_blank" rel="noopener"><img src="assets/adtrack-01.jpg" alt="adtrack proof"></a></div>
-  </div>
-</section>
 
-<section class="section proof-section">
-  <div class="section-head left">
-    <span class="tag">AdBot Vouches</span>
-    <h2>AdTrack client vouches and dashboard proofs.</h2>
-    <p>Client feedback and AdBot broadcast/dashboard screenshots.</p>
-  </div>
-  <div class="proof-grid"><a class="proof-card normal" href="assets/adbot-vouches-01.jpg" target="_blank" rel="noopener"><img src="assets/adbot-vouches-01.jpg" alt="adbot_vouches proof"></a>
-<a class="proof-card normal" href="assets/adbot-vouches-02.jpg" target="_blank" rel="noopener"><img src="assets/adbot-vouches-02.jpg" alt="adbot_vouches proof"></a>
-<a class="proof-card normal" href="assets/adbot-vouches-03.jpg" target="_blank" rel="noopener"><img src="assets/adbot-vouches-03.jpg" alt="adbot_vouches proof"></a>
-<a class="proof-card normal" href="assets/adbot-vouches-04.jpg" target="_blank" rel="noopener"><img src="assets/adbot-vouches-04.jpg" alt="adbot_vouches proof"></a>
-<a class="proof-card normal" href="assets/adbot-vouches-05.jpg" target="_blank" rel="noopener"><img src="assets/adbot-vouches-05.jpg" alt="adbot_vouches proof"></a>
-<a class="proof-card normal" href="assets/adbot-vouches-06.jpg" target="_blank" rel="noopener"><img src="assets/adbot-vouches-06.jpg" alt="adbot_vouches proof"></a></div>
-</section>
+    <div class="absolute inset-0 bg-gradient-to-b from-[#020202]/50 via-transparent to-[#020202] z-0 pointer-events-none"></div>
 
-<section id="portfolio" class="section proof-section">
-  <div class="section-head left">
-    <span class="tag">Instagram Recovery</span>
-    <h2>Suspended → Recovered proof cases.</h2>
-    <p>Instagram recovery, unban and non-appeal recovery proofs shown as separate portfolio cases.</p>
-  </div>
-  <div class="proof-grid"><a class="proof-card normal" href="assets/instagram-recovery-01.jpg" target="_blank" rel="noopener"><img src="assets/instagram-recovery-01.jpg" alt="instagram_recovery proof"></a>
-<a class="proof-card normal" href="assets/instagram-recovery-02.jpg" target="_blank" rel="noopener"><img src="assets/instagram-recovery-02.jpg" alt="instagram_recovery proof"></a>
-<a class="proof-card normal" href="assets/instagram-recovery-03.jpg" target="_blank" rel="noopener"><img src="assets/instagram-recovery-03.jpg" alt="instagram_recovery proof"></a>
-<a class="proof-card normal" href="assets/instagram-recovery-04.jpg" target="_blank" rel="noopener"><img src="assets/instagram-recovery-04.jpg" alt="instagram_recovery proof"></a>
-<a class="proof-card normal" href="assets/instagram-recovery-05.jpg" target="_blank" rel="noopener"><img src="assets/instagram-recovery-05.jpg" alt="instagram_recovery proof"></a>
-<a class="proof-card normal" href="assets/instagram-recovery-06.jpg" target="_blank" rel="noopener"><img src="assets/instagram-recovery-06.jpg" alt="instagram_recovery proof"></a></div>
-</section>
+    <div class="absolute inset-0 pointer-events-none max-w-[1600px] mx-auto z-30">
 
-<section class="section proof-section">
-  <div class="section-head left">
-    <span class="tag">Instagram Takedown</span>
-    <h2>Before → After takedown proofs.</h2>
-    <p>Instagram ban, takedown and fraud/scam account removal proofs.</p>
-  </div>
-  <div class="proof-grid"><a class="proof-card normal" href="assets/instagram-takedown-01.jpg" target="_blank" rel="noopener"><img src="assets/instagram-takedown-01.jpg" alt="instagram_takedown proof"></a>
-<a class="proof-card normal" href="assets/instagram-takedown-02.jpg" target="_blank" rel="noopener"><img src="assets/instagram-takedown-02.jpg" alt="instagram_takedown proof"></a>
-<a class="proof-card normal" href="assets/instagram-takedown-03.jpg" target="_blank" rel="noopener"><img src="assets/instagram-takedown-03.jpg" alt="instagram_takedown proof"></a>
-<a class="proof-card normal" href="assets/instagram-takedown-04.jpg" target="_blank" rel="noopener"><img src="assets/instagram-takedown-04.jpg" alt="instagram_takedown proof"></a>
-<a class="proof-card normal" href="assets/instagram-takedown-05.jpg" target="_blank" rel="noopener"><img src="assets/instagram-takedown-05.jpg" alt="instagram_takedown proof"></a>
-<a class="proof-card normal" href="assets/instagram-takedown-06.jpg" target="_blank" rel="noopener"><img src="assets/instagram-takedown-06.jpg" alt="instagram_takedown proof"></a></div>
-</section>
+        <div class="icon-container pointer-events-auto top-[12%] left-[2%] md:top-[22%] md:left-[8%] parallax-layer" data-speed="0.15">
+            <div class="animate-float" style="animation-delay: 0s;">
+                <a href="https://instagram.com/myeg" target="_blank" class="block relative z-50 transition-transform hover:scale-110 duration-300">
+                    <div class="icon-card w-20 h-20 md:w-32 md:h-32 rounded-3xl bg-gradient-to-tr from-[#833ab4] via-[#e1306c] to-[#fcb045] shadow-[#e1306c]/40 -rotate-12 cursor-pointer">
+                        <div class="gloss"></div>
+                        <svg class="text-white drop-shadow-lg relative z-10 w-10 h-10 md:w-16 md:h-16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
 
-<section class="section proof-section">
-  <div class="section-head left">
-    <span class="tag">Verification Proofs</span>
-    <h2>Instagram, Facebook & Meta verified results.</h2>
-    <p>Blue badge, Meta Verified creator, business verification and Facebook verified proofs.</p>
-  </div>
-  <div class="proof-grid"><a class="proof-card normal" href="assets/verification-01.jpg" target="_blank" rel="noopener"><img src="assets/verification-01.jpg" alt="verification proof"></a>
-<a class="proof-card normal" href="assets/verification-02.jpg" target="_blank" rel="noopener"><img src="assets/verification-02.jpg" alt="verification proof"></a>
-<a class="proof-card normal" href="assets/verification-03.jpg" target="_blank" rel="noopener"><img src="assets/verification-03.jpg" alt="verification proof"></a>
-<a class="proof-card normal" href="assets/verification-04.jpg" target="_blank" rel="noopener"><img src="assets/verification-04.jpg" alt="verification proof"></a>
-<a class="proof-card normal" href="assets/verification-05.jpg" target="_blank" rel="noopener"><img src="assets/verification-05.jpg" alt="verification proof"></a>
-<a class="proof-card normal" href="assets/verification-06.jpg" target="_blank" rel="noopener"><img src="assets/verification-06.jpg" alt="verification proof"></a>
-<a class="proof-card normal" href="assets/verification-07.jpg" target="_blank" rel="noopener"><img src="assets/verification-07.jpg" alt="verification proof"></a></div>
-</section>
+        <div class="icon-container pointer-events-auto top-[45%] left-[-5%] md:top-[55%] md:left-[5%] parallax-layer" data-speed="0.6">
+            <div class="animate-float" style="animation-delay: 1s;">
+                <a href="https://t.me/igtick" target="_blank" class="block relative z-50 transition-transform hover:scale-110 duration-300">
+                    <div class="icon-card w-16 h-16 md:w-24 md:h-24 rounded-3xl bg-gradient-to-br from-[#29B6F6] to-[#0088CC] shadow-blue-500/30 rotate-12 cursor-pointer">
+                        <div class="gloss"></div>
+                        <svg class="text-white drop-shadow-lg relative z-10 w-8 h-8 md:w-12 md:h-12" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21.683 2.668C22.25 2.457 22.84 2.94 22.68 3.52L19.48 19.52C19.34 20.25 18.42 20.53 17.84 20.01L13.29 16.03L11.12 18.28C10.87 18.54 10.45 18.37 10.45 18.01V14.54L19.8 5.46C20.05 5.23 19.72 4.86 19.45 5.07L7.65 13.06L3.38 11.53C2.66 11.27 2.69 10.25 3.42 10.03L21.68 2.67V2.668Z"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
 
-<section class="section proof-section">
-  <div class="section-head left">
-    <span class="tag">WhatsApp Services</span>
-    <h2>WhatsApp verified and organic growth proofs.</h2>
-    <p>Business verification, channel verified badge, Meta Verified and 100K organic growth proof.</p>
-  </div>
-  <div class="proof-grid"><a class="proof-card normal" href="assets/whatsapp-01.jpg" target="_blank" rel="noopener"><img src="assets/whatsapp-01.jpg" alt="whatsapp proof"></a>
-<a class="proof-card normal" href="assets/whatsapp-02.jpg" target="_blank" rel="noopener"><img src="assets/whatsapp-02.jpg" alt="whatsapp proof"></a>
-<a class="proof-card normal" href="assets/whatsapp-03.jpg" target="_blank" rel="noopener"><img src="assets/whatsapp-03.jpg" alt="whatsapp proof"></a>
-<a class="proof-card normal" href="assets/whatsapp-04.jpg" target="_blank" rel="noopener"><img src="assets/whatsapp-04.jpg" alt="whatsapp proof"></a>
-<a class="proof-card normal" href="assets/whatsapp-05.jpg" target="_blank" rel="noopener"><img src="assets/whatsapp-05.jpg" alt="whatsapp proof"></a></div>
-</section>
+        <div class="icon-container pointer-events-auto top-[10%] right-[2%] md:top-[15%] md:right-[10%] parallax-layer" data-speed="0.25">
+            <div class="animate-float" style="animation-delay: 0.5s;">
+                <a href="https://t.me/AdTrack" target="_blank" class="block relative z-50 transition-transform hover:scale-110 duration-300">
+                    <div class="icon-card w-20 h-20 md:w-32 md:h-32 rounded-3xl bg-gradient-to-br from-orange-500 to-red-600 shadow-orange-500/30 rotate-12 cursor-pointer">
+                        <div class="gloss"></div>
+                        <i data-lucide="megaphone" class="text-white drop-shadow-lg relative z-10 w-10 h-10 md:w-16 md:h-16"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
 
-<section class="section proof-section">
-  <div class="section-head left">
-    <span class="tag">Telegram Takedown</span>
-    <h2>Telegram group/channel takedown proofs.</h2>
-    <p>Policy enforcement and takedown confirmation screenshots.</p>
-  </div>
-  <div class="proof-grid small-gallery"><a class="proof-card normal" href="assets/telegram-takedown-01.jpg" target="_blank" rel="noopener"><img src="assets/telegram-takedown-01.jpg" alt="telegram_takedown proof"></a>
-<a class="proof-card normal" href="assets/telegram-takedown-02.jpg" target="_blank" rel="noopener"><img src="assets/telegram-takedown-02.jpg" alt="telegram_takedown proof"></a></div>
-</section>
+        <div class="icon-container pointer-events-auto top-[50%] right-[-5%] md:top-[65%] md:right-[5%] parallax-layer" data-speed="0.5">
+            <div class="animate-float" style="animation-delay: 1.5s;">
+                <a href="https://t.me/zexmm" target="_blank" class="block relative z-50 transition-transform hover:scale-110 duration-300">
+                    <div class="icon-card w-16 h-16 md:w-24 md:h-24 rounded-3xl bg-gradient-to-br from-gray-700 to-black shadow-black/50 border-gray-700 -rotate-3 cursor-pointer">
+                        <div class="gloss"></div>
+                        <i data-lucide="shield-check" class="text-white drop-shadow-lg relative z-10 w-8 h-8 md:w-12 md:h-12"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
 
-<section class="section proof-section">
-  <div class="section-head left">
-    <span class="tag">Website Portfolio</span>
-    <h2>Website projects done by ZEX.</h2>
-    <p>Business and organization websites built with professional responsive layouts.</p>
-  </div>
-  <div class="proof-grid small-gallery"><a class="proof-card desktop-img" href="assets/websites-01.png" target="_blank" rel="noopener"><img src="assets/websites-01.png" alt="websites proof"></a></div>
-</section>
+        <div class="icon-container pointer-events-auto top-[75%] left-[3%] md:top-[80%] md:left-[12%] parallax-layer" data-speed="0.35">
+            <div class="animate-float" style="animation-delay: 2s;">
+                <a href="https://wa.me/919635179847" target="_blank" class="block relative z-50 transition-transform hover:scale-110 duration-300">
+                    <div class="icon-card w-16 h-16 md:w-24 md:h-24 rounded-3xl bg-gradient-to-br from-[#25D366] to-[#128C7E] shadow-green-500/30 -rotate-6 cursor-pointer">
+                        <div class="gloss"></div>
+                        <svg class="text-white drop-shadow-lg relative z-10 w-8 h-8 md:w-12 md:h-12" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
 
-<section id="vouches" class="section proof-section">
-  <div class="section-head left">
-    <span class="tag">Client Vouches</span>
-    <h2>MM, exchange and service feedback wall.</h2>
-    <p>Client reviews, MM proofs, exchange vouches and service feedback screenshots.</p>
-  </div>
-  <div class="proof-grid"><a class="proof-card normal" href="assets/client-vouches-01.jpg" target="_blank" rel="noopener"><img src="assets/client-vouches-01.jpg" alt="client_vouches proof"></a>
-<a class="proof-card normal" href="assets/client-vouches-02.jpg" target="_blank" rel="noopener"><img src="assets/client-vouches-02.jpg" alt="client_vouches proof"></a>
-<a class="proof-card normal" href="assets/client-vouches-03.jpg" target="_blank" rel="noopener"><img src="assets/client-vouches-03.jpg" alt="client_vouches proof"></a>
-<a class="proof-card normal" href="assets/client-vouches-04.jpg" target="_blank" rel="noopener"><img src="assets/client-vouches-04.jpg" alt="client_vouches proof"></a>
-<a class="proof-card normal" href="assets/client-vouches-05.jpg" target="_blank" rel="noopener"><img src="assets/client-vouches-05.jpg" alt="client_vouches proof"></a>
-<a class="proof-card normal" href="assets/client-vouches-06.jpg" target="_blank" rel="noopener"><img src="assets/client-vouches-06.jpg" alt="client_vouches proof"></a>
-<a class="proof-card normal" href="assets/client-vouches-07.jpg" target="_blank" rel="noopener"><img src="assets/client-vouches-07.jpg" alt="client_vouches proof"></a>
-<a class="proof-card normal" href="assets/client-vouches-08.jpg" target="_blank" rel="noopener"><img src="assets/client-vouches-08.jpg" alt="client_vouches proof"></a>
-<a class="proof-card normal" href="assets/client-vouches-09.jpg" target="_blank" rel="noopener"><img src="assets/client-vouches-09.jpg" alt="client_vouches proof"></a>
-<a class="proof-card normal" href="assets/client-vouches-10.jpg" target="_blank" rel="noopener"><img src="assets/client-vouches-10.jpg" alt="client_vouches proof"></a>
-<a class="proof-card normal" href="assets/client-vouches-11.jpg" target="_blank" rel="noopener"><img src="assets/client-vouches-11.jpg" alt="client_vouches proof"></a>
-<a class="proof-card normal" href="assets/client-vouches-12.jpg" target="_blank" rel="noopener"><img src="assets/client-vouches-12.jpg" alt="client_vouches proof"></a>
-<a class="proof-card normal" href="assets/client-vouches-13.jpg" target="_blank" rel="noopener"><img src="assets/client-vouches-13.jpg" alt="client_vouches proof"></a>
-<a class="proof-card normal" href="assets/client-vouches-14.jpg" target="_blank" rel="noopener"><img src="assets/client-vouches-14.jpg" alt="client_vouches proof"></a>
-<a class="proof-card normal" href="assets/client-vouches-15.jpg" target="_blank" rel="noopener"><img src="assets/client-vouches-15.jpg" alt="client_vouches proof"></a>
-<a class="proof-card normal" href="assets/client-vouches-16.jpg" target="_blank" rel="noopener"><img src="assets/client-vouches-16.jpg" alt="client_vouches proof"></a>
-<a class="proof-card normal" href="assets/client-vouches-17.jpg" target="_blank" rel="noopener"><img src="assets/client-vouches-17.jpg" alt="client_vouches proof"></a>
-<a class="proof-card normal" href="assets/client-vouches-18.jpg" target="_blank" rel="noopener"><img src="assets/client-vouches-18.jpg" alt="client_vouches proof"></a>
-<a class="proof-card normal" href="assets/client-vouches-19.jpg" target="_blank" rel="noopener"><img src="assets/client-vouches-19.jpg" alt="client_vouches proof"></a>
-<a class="proof-card normal" href="assets/client-vouches-20.jpg" target="_blank" rel="noopener"><img src="assets/client-vouches-20.jpg" alt="client_vouches proof"></a></div>
-</section>
+        <div class="icon-container pointer-events-auto bottom-[15%] right-[5%] md:bottom-[22%] md:right-[20%] parallax-layer" data-speed="0.1">
+            <div class="animate-float" style="animation-delay: 2.5s;">
+                <a href="https://t.me/fensat" target="_blank" class="block relative z-50 transition-transform hover:scale-110 duration-300">
+                    <div class="icon-card w-16 h-16 md:w-24 md:h-24 rounded-3xl bg-gradient-to-br from-[#19bfff] to-[#3158ff] shadow-blue-500/30 rotate-6 cursor-pointer">
+                        <div class="gloss"></div>
+                        <svg class="text-white drop-shadow-lg relative z-10 w-8 h-8 md:w-12 md:h-12" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21.683 2.668C22.25 2.457 22.84 2.94 22.68 3.52L19.48 19.52C19.34 20.25 18.42 20.53 17.84 20.01L13.29 16.03L11.12 18.28C10.87 18.54 10.45 18.37 10.45 18.01V14.54L19.8 5.46C20.05 5.23 19.72 4.86 19.45 5.07L7.65 13.06L3.38 11.53C2.66 11.27 2.69 10.25 3.42 10.03L21.68 2.67V2.668Z"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
 
-<section id="channels" class="section channel-section">
-  <div class="channel-card">
-    <img src="assets/myeg-logo.jpg" alt="MYEG Channel">
-    <div>
-      <span class="tag">Verified WhatsApp Channel</span>
-      <h2>Join MYEG Dropshipping Channel</h2>
-      <p>Follow the verified dropshipping channel for business growth, digital learning and commerce updates.</p>
-      <a class="primary" href="https://whatsapp.com/channel/0029Vb7IKVLKAwEqaZy7Nl2J" target="_blank" rel="noopener">Join Channel</a>
     </div>
-  </div>
-</section>
 
-<section id="tos" class="section">
-  <div class="tos-card">
-    <span class="tag">Terms of Service</span>
-    <h2>No MM = No Deal</h2>
-    <p>Due to recent experiences where some individuals received services and later failed to complete payment, all deals will now be done strictly through a trusted Middleman.</p>
-    <ul>
-      <li>All deals will be conducted only through MM.</li>
-      <li>No direct payments and no exceptions.</li>
-      <li>No special treatment based on age, reputation or old connection.</li>
-      <li>Proper procedure is required for safety and fairness.</li>
-    </ul>
-    <a class="primary" href="https://t.me/fensat" target="_blank" rel="noopener">@fensat ✅</a>
-  </div>
-</section>
+    <div class="relative z-20 text-center max-w-5xl px-6 parallax-layer" data-speed="0.05">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl text-xs font-medium text-white mb-6 shadow-lg hover:bg-white/10 transition-all cursor-default">
+            <i data-lucide="zap" width="12" height="12" fill="white" class="text-white"></i><span class="tracking-wide">Premium Digital Services Since 2022</span>
+        </div>
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-white mb-8 leading-[1.1] md:leading-[0.95] drop-shadow-2xl">
+            Social Media Recovery, <br />
+            <img src="assets/zex-logo.jpg" alt="ZEX Logo" class="inline-block w-10 h-10 md:w-16 md:h-16 rounded-full object-cover align-middle mr-2 -mt-2 md:-mt-3">
+            <span class="text-metal">Verification &amp; Growth.</span>
+        </h1>
+        <p class="text-lg md:text-2xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">ZEX SM Expert provides professional digital assistance for Instagram, Facebook, WhatsApp, Telegram, Meta Verified, takedowns, username claims, AdTrack ads, crypto exchange, MM service and premium websites.<br/><span class="text-gray-500">Trusted deal support, powered by @myeg.</span></p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center mb-14">
+            <a href="https://t.me/fensat" target="_blank" rel="noopener" class="px-12 py-5 btn-furnace text-white font-bold text-lg rounded-full">Contact @fensat</a>
+            <a href="#portfolio" class="px-12 py-5 bg-white/5 border border-white/10 text-white font-bold text-lg rounded-full hover:bg-white/10 transition-colors backdrop-blur-md">View Portfolio</a>
+        </div>
 
-<section id="contact" class="section">
-  <div class="section-head">
-    <span class="tag">Official Contacts</span>
-    <h2>Work with ZEX SM Expert.</h2>
-  </div>
-  <div class="contact-grid">
-    <a href="https://t.me/fensat" target="_blank"><span>Telegram</span><b>@fensat</b></a>
-    <a href="https://t.me/igtick" target="_blank"><span>Personal</span><b>@igtick</b></a>
-    <a href="https://instagram.com/myeg" target="_blank"><span>Instagram</span><b>@myeg</b></a>
-    <a href="https://wa.me/919635179847" target="_blank"><span>WhatsApp</span><b>+91 96351 79847</b></a>
-    <a href="mailto:nayemfarhad07@gmail.com"><span>Email</span><b>nayemfarhad07@gmail.com</b></a>
-    <a href="https://t.me/stadle" target="_blank"><span>Updates</span><b>@stadle</b></a>
-    <a href="https://t.me/AdTrack" target="_blank"><span>AdBot</span><b>@AdTrack</b></a>
-    <a href="https://t.me/zexmm" target="_blank"><span>Middleman</span><b>@zexmm</b></a>
-  </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+            <div class="bg-white/5 border border-white/10 rounded-2xl px-4 py-5 backdrop-blur-md">
+                <b class="block text-3xl font-extrabold text-white">1200+</b>
+                <span class="text-[11px] uppercase tracking-widest font-bold text-gray-500">Deals &amp; Vouches</span>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl px-4 py-5 backdrop-blur-md">
+                <b class="block text-3xl font-extrabold text-white">20+</b>
+                <span class="text-[11px] uppercase tracking-widest font-bold text-gray-500">Proof Categories</span>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl px-4 py-5 backdrop-blur-md">
+                <b class="block text-3xl font-extrabold text-white">24/7</b>
+                <span class="text-[11px] uppercase tracking-widest font-bold text-gray-500">Support Desk</span>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl px-4 py-5 backdrop-blur-md">
+                <b class="block text-3xl font-extrabold text-white">2022</b>
+                <span class="text-[11px] uppercase tracking-widest font-bold text-gray-500">Working Since</span>
+            </div>
+        </div>
+    </div>
 </section>
-</main>
+        <section id="adtrack" class="pt-20 pb-32 bg-[#020202] relative border-t border-white/5 overflow-hidden">
 
-<footer>
-  <div class="footer-brand"><img src="assets/zex-logo.jpg" alt=""><b>ZEX SM Expert</b></div>
-  <p>© 2026 ZEX SM Expert. Premium digital services since 2022.</p>
+    <div class="relative w-full flex items-center justify-center py-10 mb-10 overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-80">
+            <svg class="w-full h-full" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                <defs><linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#19bfff" /><stop offset="50%" stop-color="#ffffff" /><stop offset="100%" stop-color="#FF5500" /></linearGradient></defs>
+                <path d="M0,50 C250,50 250,20 500,50 S750,80 1000,50" stroke="url(#glowGrad)" stroke-width="8" stroke-opacity="0.5" fill="none" style="filter: blur(8px);" vector-effect="non-scaling-stroke" />
+                <path d="M0,50 C250,50 250,20 500,50 S750,80 1000,50" stroke="url(#glowGrad)" stroke-width="2" fill="none" vector-effect="non-scaling-stroke" />
+            </svg>
+        </div>
+        <div class="relative z-10 flex items-center gap-3 md:gap-6 bg-[#020202]/80 backdrop-blur-sm px-6 py-3 md:px-10 md:py-5 rounded-full border border-white/5 shadow-2xl max-w-[95%] mx-auto">
+            <img src="assets/zex-logo.jpg" alt="ZEX" class="h-8 md:h-16 w-8 md:w-16 rounded-full object-cover flex-shrink-0">
+            <div class="w-9 h-9 md:w-11 md:h-11 rounded-full bg-[#020202] border border-white/20 flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.15)] flex-shrink-0"><i data-lucide="x" class="w-3 h-3 md:w-4 md:h-4 text-white"></i></div>
+            <span class="text-lg md:text-3xl font-extrabold text-white tracking-tight">AdTrack</span>
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-10 items-center">
+
+        <div>
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-orange-500/20 bg-orange-500/5 mb-6 shadow-[0_0_15px_rgba(255,85,0,0.15)]">
+                <span class="w-1.5 h-1.5 rounded-full bg-orange-500 shadow-[0_0_10px_#f97316] animate-pulse"></span>
+                <span class="text-orange-500 font-bold uppercase tracking-widest text-xs">Zex's Telegram Portal</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight">AdTrack — Telegram Ads &amp; AdBot Platform.</h2>
+            <p class="text-gray-400 text-lg leading-relaxed mb-4">We specialize in social media services and have extensive experience working across multiple platforms. AdTrack helps creators, brands and channels run Telegram ad campaigns, broadcasts and promotion workflows.</p>
+            <p class="text-gray-400 text-lg leading-relaxed mb-8">With genuine client reviews and proven results, we aim to deliver reliable and trusted service — Telegram advertising, channel promotion, group promotion, campaign tracking and custom AdBot workflow support.</p>
+            <a href="https://t.me/AdTrack" target="_blank" rel="noopener" class="inline-flex px-10 py-4 btn-furnace text-white font-bold text-base rounded-full">Open @AdTrack</a>
+        </div>
+
+        <a href="assets/adtrack-01.jpg" target="_blank" rel="noopener" class="relative block w-full aspect-video rounded-[32px] overflow-hidden border border-white/10 group cursor-pointer shadow-2xl shadow-orange-900/10 hover:shadow-orange-900/20 transition-all duration-500 bg-black">
+            <img src="assets/adtrack-01.jpg"
+                 class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 group-hover:scale-105"
+                 alt="AdTrack proof">
+            <div class="absolute inset-0 bg-[#080808]/20 group-hover:bg-[#080808]/10 transition-colors z-10"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,100,0,0.15),transparent_80%)] opacity-80 z-10"></div>
+            <div class="absolute bottom-6 left-6 px-5 py-2.5 bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-xs font-bold text-white uppercase tracking-wider flex items-center gap-3 z-20">
+                <span class="w-2.5 h-2.5 rounded-full bg-orange-500 animate-pulse"></span>AdTrack Dashboard Proof
+            </div>
+        </a>
+    </div>
+</section>
+        <section id="services" class="pt-32 pb-32 bg-[#020202] relative z-10 border-t border-white/5">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-20">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-orange-500/20 bg-orange-500/5 mb-6 shadow-[0_0_15px_rgba(255,85,0,0.15)]">
+                        <span class="w-1.5 h-1.5 rounded-full bg-orange-500 shadow-[0_0_10px_#f97316] animate-pulse"></span>
+                        <span class="text-orange-500 font-bold uppercase tracking-widest text-xs">Service Categories</span>
+                    </div>
+                    <h2 class="text-5xl md:text-6xl font-extrabold text-white mt-0 mb-6 tracking-tight">Everything Separated, Clean &amp; Premium.</h2>
+                    <p class="text-gray-400 max-w-lg mx-auto text-lg">Choose your category and contact directly. Every service follows a proper process.</p>
+                </div>
+
+                <div id="service-tabs" class="w-full max-w-5xl mx-auto flex items-center justify-start md:justify-center gap-[15px] overflow-x-auto py-[10px] px-[20px] no-scrollbar whitespace-nowrap mb-16">
+
+    <button class="tab-btn active group flex-shrink-0 flex items-center gap-2 px-5 py-[10px] rounded-[12px] bg-[linear-gradient(180deg,#1a1a1a_0%,#050505_100%)] border border-[#2a2a2a] text-white text-[11px] font-bold tracking-[1px] uppercase shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_4px_10px_rgba(0,0,0,0.5)] transition-all duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)]" onclick="switchTab('all', this)">
+        <i data-lucide="layout-grid" width="14"></i> ALL <i data-lucide="chevron-right" width="14" class="chevron-icon text-white"></i>
+    </button>
+
+    <button class="tab-btn group flex-shrink-0 flex items-center gap-2 px-5 py-[10px] rounded-[12px] bg-white/5 border border-white/10 text-[#888888] hover:text-white hover:border-white/30 text-[11px] font-bold tracking-[1px] uppercase transition-all duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)]" onclick="switchTab('instagram', this)">
+        <i data-lucide="instagram" width="14"></i> INSTAGRAM <i data-lucide="chevron-right" width="14" class="chevron-icon hidden text-white"></i>
+    </button>
+
+    <button class="tab-btn group flex-shrink-0 flex items-center gap-2 px-5 py-[10px] rounded-[12px] bg-white/5 border border-white/10 text-[#888888] hover:text-white hover:border-white/30 text-[11px] font-bold tracking-[1px] uppercase transition-all duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)]" onclick="switchTab('facebook', this)">
+        <i data-lucide="facebook" width="14"></i> FACEBOOK <i data-lucide="chevron-right" width="14" class="chevron-icon hidden text-white"></i>
+    </button>
+
+    <button class="tab-btn group flex-shrink-0 flex items-center gap-2 px-5 py-[10px] rounded-[12px] bg-white/5 border border-white/10 text-[#888888] hover:text-white hover:border-white/30 text-[11px] font-bold tracking-[1px] uppercase transition-all duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)]" onclick="switchTab('whatsapp', this)">
+        <i data-lucide="message-circle" width="14"></i> WHATSAPP <i data-lucide="chevron-right" width="14" class="chevron-icon hidden text-white"></i>
+    </button>
+
+    <button class="tab-btn group flex-shrink-0 flex items-center gap-2 px-5 py-[10px] rounded-[12px] bg-white/5 border border-white/10 text-[#888888] hover:text-white hover:border-white/30 text-[11px] font-bold tracking-[1px] uppercase transition-all duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)]" onclick="switchTab('telegram', this)">
+        <i data-lucide="send" width="14"></i> TELEGRAM <i data-lucide="chevron-right" width="14" class="chevron-icon hidden text-white"></i>
+    </button>
+
+    <button class="tab-btn group flex-shrink-0 flex items-center gap-2 px-5 py-[10px] rounded-[12px] bg-white/5 border border-white/10 text-[#888888] hover:text-white hover:border-white/30 text-[11px] font-bold tracking-[1px] uppercase transition-all duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)]" onclick="switchTab('other', this)">
+        <i data-lucide="briefcase" width="14"></i> OTHER <i data-lucide="chevron-right" width="14" class="chevron-icon hidden text-white"></i>
+    </button>
+
+</div>
+
+
+
+                <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 animate-fade-in"></div>
+            </div>
+        </section>
+        <section id="portfolio" class="pt-32 pb-32 bg-[#020202] relative z-10 border-t border-white/5">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-orange-500/20 bg-orange-500/5 mb-6 shadow-[0_0_15px_rgba(255,85,0,0.15)]">
+                        <span class="w-1.5 h-1.5 rounded-full bg-orange-500 shadow-[0_0_10px_#f97316] animate-pulse"></span>
+                        <span class="text-orange-500 font-bold uppercase tracking-widest text-xs">Portfolio &amp; Proofs</span>
+                    </div>
+                    <h2 class="text-5xl md:text-6xl font-extrabold text-white mt-0 mb-6 tracking-tight">Real Cases, Real Screenshots.</h2>
+                    <p class="text-gray-400 max-w-lg mx-auto text-lg">Every category has its own dashboard proofs and confirmation screenshots. Tap any image to view full size.</p>
+                </div>
+
+                <div id="portfolio-tabs" class="w-full max-w-5xl mx-auto flex items-center justify-start md:justify-center gap-[15px] overflow-x-auto py-[10px] px-[20px] no-scrollbar whitespace-nowrap mb-16">
+
+    <button class="tab-btn active group flex-shrink-0 flex items-center gap-2 px-5 py-[10px] rounded-[12px] bg-[linear-gradient(180deg,#1a1a1a_0%,#050505_100%)] border border-[#2a2a2a] text-white text-[11px] font-bold tracking-[1px] uppercase shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_4px_10px_rgba(0,0,0,0.5)] transition-all duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)]" onclick="switchPortfolioTab('adbot', this)">
+        <i data-lucide="megaphone" width="14"></i> ADBOT VOUCHES
+    </button>
+    <button class="tab-btn group flex-shrink-0 flex items-center gap-2 px-5 py-[10px] rounded-[12px] bg-white/5 border border-white/10 text-[#888888] hover:text-white hover:border-white/30 text-[11px] font-bold tracking-[1px] uppercase transition-all duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)]" onclick="switchPortfolioTab('ig_recovery', this)">
+        <i data-lucide="instagram" width="14"></i> IG RECOVERY
+    </button>
+    <button class="tab-btn group flex-shrink-0 flex items-center gap-2 px-5 py-[10px] rounded-[12px] bg-white/5 border border-white/10 text-[#888888] hover:text-white hover:border-white/30 text-[11px] font-bold tracking-[1px] uppercase transition-all duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)]" onclick="switchPortfolioTab('ig_takedown', this)">
+        <i data-lucide="instagram" width="14"></i> IG TAKEDOWN
+    </button>
+    <button class="tab-btn group flex-shrink-0 flex items-center gap-2 px-5 py-[10px] rounded-[12px] bg-white/5 border border-white/10 text-[#888888] hover:text-white hover:border-white/30 text-[11px] font-bold tracking-[1px] uppercase transition-all duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)]" onclick="switchPortfolioTab('verification', this)">
+        <i data-lucide="badge-check" width="14"></i> VERIFICATION
+    </button>
+    <button class="tab-btn group flex-shrink-0 flex items-center gap-2 px-5 py-[10px] rounded-[12px] bg-white/5 border border-white/10 text-[#888888] hover:text-white hover:border-white/30 text-[11px] font-bold tracking-[1px] uppercase transition-all duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)]" onclick="switchPortfolioTab('whatsapp', this)">
+        <i data-lucide="message-circle" width="14"></i> WHATSAPP
+    </button>
+    <button class="tab-btn group flex-shrink-0 flex items-center gap-2 px-5 py-[10px] rounded-[12px] bg-white/5 border border-white/10 text-[#888888] hover:text-white hover:border-white/30 text-[11px] font-bold tracking-[1px] uppercase transition-all duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)]" onclick="switchPortfolioTab('tg_takedown', this)">
+        <i data-lucide="send" width="14"></i> TG TAKEDOWN
+    </button>
+    <button class="tab-btn group flex-shrink-0 flex items-center gap-2 px-5 py-[10px] rounded-[12px] bg-white/5 border border-white/10 text-[#888888] hover:text-white hover:border-white/30 text-[11px] font-bold tracking-[1px] uppercase transition-all duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)]" onclick="switchPortfolioTab('websites', this)">
+        <i data-lucide="globe" width="14"></i> WEBSITES
+    </button>
+
+</div>
+
+                <div id="portfolio-grid" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5 animate-fade-in"></div>
+            </div>
+        </section>
+        <section id="vouches" class="py-32 bg-[#020202] relative border-t border-white/5">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-orange-500/20 bg-orange-500/5 shadow-[0_0_15px_rgba(255,85,0,0.15)] mb-6">
+                    <span class="w-1.5 h-1.5 rounded-full bg-orange-500 shadow-[0_0_10px_#f97316] animate-pulse"></span>
+                    <span class="text-orange-500 font-bold uppercase tracking-widest text-xs">Client Vouches</span>
+                </div>
+                <h2 class="text-4xl font-bold text-white">MM, Exchange &amp; Service Feedback Wall</h2>
+            </div>
+
+            <div class="relative w-full overflow-hidden mb-32">
+    <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#020202] to-transparent z-10 pointer-events-none"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#020202] to-transparent z-10 pointer-events-none"></div>
+
+    <div class="animate-marquee" id="marquee-content">
+        </div>
+</div>
+
+
+            <div class="text-center mb-16">
+                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-orange-500/20 bg-orange-500/5 shadow-[0_0_15px_rgba(255,85,0,0.15)]">
+                    <span class="w-1.5 h-1.5 rounded-full bg-orange-500 shadow-[0_0_10px_#f97316] animate-pulse"></span>
+                    <span class="text-orange-500 font-bold uppercase tracking-widest text-xs">Past Work</span>
+                </div>
+            </div>
+
+            <div class="overflow-hidden w-full relative">
+                <div class="work-track" id="work-track">
+                    </div>
+            </div>
+        </section>
+        <section id="contact" class="py-32 bg-[#020202] border-t border-white/5 relative overflow-hidden">
+
+    <div class="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-[#FF5500]/10 blur-[100px] pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-red-600/5 blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-16">
+
+            <div class="w-full lg:w-1/2 text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#FF5500]/30 bg-[#FF5500]/10 mb-6 backdrop-blur-md">
+                    <i data-lucide="shield-check" width="14" class="text-[#FF5500]"></i>
+                    <span class="text-[#FF5500] font-bold uppercase tracking-widest text-[10px]">Official Contacts</span>
+                </div>
+
+                <h2 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6 leading-[1.1]">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500">Work With ZEX.</span>
+                </h2>
+
+                <p class="text-gray-400 text-lg leading-relaxed mb-10 max-w-md">
+                    Quick access to our official Telegram channels, crypto exchange, middleman service and secure request form.
+                </p>
+
+                <div class="flex items-center gap-6">
+                    <div class="flex -space-x-3">
+                        <div class="w-10 h-10 rounded-full border border-white/10 relative z-20 overflow-hidden bg-[#111]">
+                            <img src="assets/zex-profile.jpg" alt="ZEX profile" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-10 h-10 rounded-full border border-white/10 relative z-10 overflow-hidden bg-[#111]">
+                            <img src="assets/zex-logo.jpg" alt="ZEX logo" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-10 h-10 rounded-full border border-white/10 relative z-0 overflow-hidden bg-[#111]">
+                            <img src="assets/myeg-logo.jpg" alt="MYEG" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <span class="text-sm font-medium text-gray-500">1200+ deals &amp; vouches since 2022</span>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-[420px] relative group h-full">
+
+                <div class="absolute inset-0 bg-gradient-to-b from-[#FF5500] to-red-900 rounded-[32px] blur-2xl opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none"></div>
+
+                <div class="relative bg-[#0a0a0a] border border-white/10 rounded-[32px] p-8 shadow-2xl flex flex-col h-full z-10">
+
+                    <div class="flex items-center justify-between mb-8 shrink-0">
+                        <h3 class="text-xl font-bold text-white">Contact Us</h3>
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-[#FF5500] shadow-[0_0_10px_#FF5500] animate-pulse"></span>
+                            <span class="text-[10px] uppercase font-bold text-[#FF5500] tracking-wider">Cases Active</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-4 grow">
+
+                        <a href="https://t.me/fensat" target="_blank" class="w-full relative flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group/item">
+                            <div class="flex items-center gap-4 min-w-0">
+                                <div class="w-10 h-10 shrink-0 rounded-lg bg-[#1a1a1a] border border-white/10 flex items-center justify-center shadow-lg group-hover/item:border-[#FF5500]/50 transition-colors">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" class="text-gray-300 group-hover/item:text-white" width="20" height="20">
+                                        <path d="M20.665 3.717l-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42l10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l-.002.001l-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15l4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z"/>
+                                    </svg>
+                                </div>
+                                <div class="text-left overflow-hidden">
+                                    <div class="text-white font-bold text-sm truncate">ZEX Telegram</div>
+                                    <div class="text-gray-500 text-xs truncate">Official contact @fensat</div>
+                                </div>
+                            </div>
+                            <div class="w-8 h-8 shrink-0 rounded-full border border-white/10 flex items-center justify-center group-hover/item:bg-[#FF5500] group-hover/item:border-[#FF5500] group-hover/item:text-white transition-all">
+                                <i data-lucide="chevron-right" width="16"></i>
+                            </div>
+                        </a>
+
+<a href="https://t.me/igtick" target="_blank" class="w-full relative flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group/item">
+                            <div class="flex items-center gap-4 min-w-0">
+                                <div class="w-10 h-10 shrink-0 rounded-lg bg-[#1a1a1a] border border-white/10 flex items-center justify-center shadow-lg group-hover/item:border-[#FF5500]/50 transition-colors">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" class="text-gray-300 group-hover/item:text-white" width="20" height="20">
+                                        <path d="M20.665 3.717l-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42l10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l-.002.001l-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15l4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z"/>
+                                    </svg>
+                                </div>
+                                <div class="text-left overflow-hidden">
+                                    <div class="text-white font-bold text-sm truncate">Personal Telegram</div>
+                                    <div class="text-gray-500 text-xs truncate">Contact @igtick</div>
+                                </div>
+                            </div>
+                            <div class="w-8 h-8 shrink-0 rounded-full border border-white/10 flex items-center justify-center group-hover/item:bg-[#FF5500] group-hover/item:border-[#FF5500] group-hover/item:text-white transition-all">
+                                <i data-lucide="chevron-right" width="16"></i>
+                            </div>
+                        </a>
+
+                        <button onclick="toggleContactForm()" class="w-full relative flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group/item">
+                            <div class="flex items-center gap-4 min-w-0">
+                                <div class="w-10 h-10 shrink-0 rounded-lg bg-[#1a1a1a] border border-white/10 flex items-center justify-center shadow-lg group-hover/item:border-[#FF5500]/50 transition-colors">
+                                    <i data-lucide="mail" class="text-gray-300 group-hover/item:text-white" width="20"></i>
+                                </div>
+                                <div class="text-left overflow-hidden">
+                                    <div class="text-white font-bold text-sm truncate">Send A Message</div>
+                                    <div class="text-gray-500 text-xs truncate">nayemfarhad07@gmail.com</div>
+                                </div>
+                            </div>
+                            <div class="w-8 h-8 shrink-0 rounded-full border border-white/10 flex items-center justify-center group-hover/item:bg-[#FF5500] group-hover/item:border-[#FF5500] group-hover/item:text-white transition-all">
+                                <i data-lucide="chevron-right" width="16"></i>
+                            </div>
+                        </button>
+<a href="https://t.me/zexmm" target="_blank" class="w-full relative flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group/item">
+    <div class="flex items-center gap-4 min-w-0">
+        <div class="w-10 h-10 shrink-0 rounded-lg bg-[#1a1a1a] border border-white/10 flex items-center justify-center shadow-lg group-hover/item:border-[#FF5500]/50 transition-colors overflow-hidden">
+            <i data-lucide="shield-check" class="text-gray-300 group-hover/item:text-white" width="20"></i>
+        </div>
+
+        <div class="text-left overflow-hidden">
+            <div class="text-white font-bold text-sm truncate">Middleman (MM)</div>
+            <div class="text-gray-500 text-xs truncate">No MM = No Deal</div>
+        </div>
+    </div>
+
+    <div class="w-8 h-8 shrink-0 rounded-full border border-white/10 flex items-center justify-center group-hover/item:bg-[#FF5500] group-hover/item:border-[#FF5500] group-hover/item:text-white transition-all">
+        <i data-lucide="chevron-right" width="16"></i>
+    </div>
+</a>
+
+
+                    <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-center gap-2 opacity-60 shrink-0">
+                        <i data-lucide="lock" width="12" class="text-[#FF5500]"></i>
+                        <span class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Secured Via Trusted Middleman</span>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10 mt-20">
+        <div class="text-center mb-12">
+            <span class="text-orange-500 font-bold uppercase tracking-widest text-xs">All Contacts</span>
+            <h3 class="text-3xl font-extrabold text-white mt-3">Official ZEX SM Expert Contacts</h3>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+
+            <a href="https://instagram.com/myeg" target="_blank" class="w-full relative flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group/item">
+                <div class="flex items-center gap-4 min-w-0">
+                    <div class="w-10 h-10 shrink-0 rounded-lg bg-[#1a1a1a] border border-white/10 flex items-center justify-center group-hover/item:border-[#FF5500]/50 transition-colors">
+                        <i data-lucide="instagram" width="18" class="text-gray-300 group-hover/item:text-white"></i>
+                    </div>
+                    <div class="text-left overflow-hidden">
+                        <div class="text-gray-500 text-[10px] uppercase font-bold tracking-widest">Instagram</div>
+                        <div class="text-white font-bold text-sm truncate">@myeg</div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://wa.me/919635179847" target="_blank" class="w-full relative flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group/item">
+                <div class="flex items-center gap-4 min-w-0">
+                    <div class="w-10 h-10 shrink-0 rounded-lg bg-[#1a1a1a] border border-white/10 flex items-center justify-center group-hover/item:border-[#FF5500]/50 transition-colors">
+                        <i data-lucide="message-circle" width="18" class="text-gray-300 group-hover/item:text-white"></i>
+                    </div>
+                    <div class="text-left overflow-hidden">
+                        <div class="text-gray-500 text-[10px] uppercase font-bold tracking-widest">WhatsApp</div>
+                        <div class="text-white font-bold text-sm truncate">+91 96351 79847</div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="mailto:nayemfarhad07@gmail.com" class="w-full relative flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group/item">
+                <div class="flex items-center gap-4 min-w-0">
+                    <div class="w-10 h-10 shrink-0 rounded-lg bg-[#1a1a1a] border border-white/10 flex items-center justify-center group-hover/item:border-[#FF5500]/50 transition-colors">
+                        <i data-lucide="mail" width="18" class="text-gray-300 group-hover/item:text-white"></i>
+                    </div>
+                    <div class="text-left overflow-hidden">
+                        <div class="text-gray-500 text-[10px] uppercase font-bold tracking-widest">Email</div>
+                        <div class="text-white font-bold text-sm truncate">nayemfarhad07@gmail.com</div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://t.me/stadle" target="_blank" class="w-full relative flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group/item">
+                <div class="flex items-center gap-4 min-w-0">
+                    <div class="w-10 h-10 shrink-0 rounded-lg bg-[#1a1a1a] border border-white/10 flex items-center justify-center group-hover/item:border-[#FF5500]/50 transition-colors">
+                        <i data-lucide="send" width="18" class="text-gray-300 group-hover/item:text-white"></i>
+                    </div>
+                    <div class="text-left overflow-hidden">
+                        <div class="text-gray-500 text-[10px] uppercase font-bold tracking-widest">Updates</div>
+                        <div class="text-white font-bold text-sm truncate">@stadle</div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
+    <section id="tos" class="py-32 bg-[#020202] border-t border-white/5 relative z-10">
+    <div class="max-w-4xl mx-auto px-6">
+
+        <div class="text-center mb-20">
+             <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-orange-500/20 bg-orange-500/5 shadow-[0_0_15px_rgba(255,85,0,0.15)] mb-6">
+                <span class="w-1.5 h-1.5 rounded-full bg-orange-500 shadow-[0_0_10px_#f97316] animate-pulse"></span>
+                <span class="text-orange-500 font-bold uppercase tracking-widest text-xs">Terms of Service</span>
+            </div>
+            <h2 class="text-5xl font-extrabold text-white tracking-tight">No MM = No Deal</h2>
+            <p class="text-gray-400 max-w-xl mx-auto mt-6 text-lg leading-relaxed">Due to recent experiences where some individuals received services and later failed to complete payment, all deals will now be done strictly through a trusted Middleman.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+
+            <div class="trust-card orange" style="background: linear-gradient(180deg, rgba(255, 85, 0, 0.05) 0%, #050505 100%); border-color: rgba(255, 85, 0, 0.15);">
+                <div class="circuit-lines" style="background-image: linear-gradient(rgba(255, 85, 0, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 85, 0, 0.05) 1px, transparent 1px);"></div>
+
+                <div class="flex-grow flex justify-center items-center relative">
+                    <div class="absolute w-[120px] h-[120px] bg-[radial-gradient(circle,rgba(255,85,0,0.25)_0%,transparent_70%)] blur-2xl left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0"></div>
+
+                    <div class="relative z-10 flex justify-center items-center text-[#FF5500] drop-shadow-[0_0_15px_rgba(255,85,0,0.4)]">
+                        <i data-lucide="shield" style="width: 100px; height: 100px; stroke-width: 1px;"></i>
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#7c2d12]">
+                            <i data-lucide="check-circle" style="width: 32px; height: 32px; fill: #FF5500; stroke: #000;"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-auto relative z-10">
+                    <h3 class="text-xl font-bold text-white mb-2">All Deals Through MM</h3>
+                    <p class="text-gray-400 text-sm">All deals will be conducted only through a trusted Middleman. No direct payments and no exceptions — proper procedure is required for safety.</p>
+                </div>
+            </div>
+
+            <div class="trust-card metal" style="background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, #050505 100%);">
+                <div class="absolute w-[150px] h-[150px] bg-[radial-gradient(circle,rgba(255,255,255,0.1)_0%,transparent_70%)] blur-2xl left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0"></div>
+
+                <div class="flex-grow flex justify-center items-center relative pb-6">
+                    <div class="css-lock">
+                        <div class="lock-shackle" style="border-color: #e0e0e0; background: linear-gradient(to right, #999, #fff 50%, #999);"></div>
+                        <div class="lock-body" style="background: linear-gradient(135deg, #FF5500 0%, #cc4400 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.3); border: 1px solid #ff7700;">
+                            <i data-lucide="scale" class="text-white w-8 h-8 drop-shadow-md"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-auto relative z-10">
+                    <h3 class="text-xl font-bold text-white">No Special Treatment</h3>
+                    <p class="text-gray-400 text-sm mt-2">No special treatment based on age, reputation or old connection. Every client follows the exact same proper procedure — fair and equal for everyone.</p>
+                </div>
+            </div>
+
+            <div class="trust-card orange md:col-span-2 md:flex-row md:items-center min-h-[300px]" style="background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, #050505 100%); border-color: rgba(255, 255, 255, 0.1);">
+
+                <div class="orbit-container">
+                    <div class="absolute w-[250px] h-[250px] bg-[radial-gradient(circle,rgba(255,255,255,0.05)_0%,transparent_70%)] blur-2xl left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0"></div>
+
+                    <div class="ring ring-1" style="border-color: rgba(255,255,255,0.3);">
+                        <div class="logo-item" style="top: 15%; left: 18%; transform: rotate(-5deg); border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.05);">
+                            Escrow
+                        </div>
+                        <div class="logo-item" style="bottom: 30%; right: 10%; transform: rotate(10deg); border-color: rgba(255,255,255,0.2);">
+                            <i data-lucide="bitcoin" width="14" class="text-orange-500"></i>
+                            <span class="text-white">Crypto</span>
+                        </div>
+                    </div>
+
+                    <div class="ring ring-2" style="border-color: rgba(255,255,255,0.15);">
+                        <div class="logo-item" style="top: 20%; right: 20%; font-size: 0.7rem; border-color: rgba(255,255,255,0.1);">
+                            <i data-lucide="lock" width="10" class="text-white"></i>
+                            INR ⇄ USD
+                        </div>
+                        <div class="logo-item" style="bottom: 20%; left: 15%; font-weight: 900; color: #fff; border-color: rgba(255,255,255,0.1);">
+                            MM
+                        </div>
+                    </div>
+
+                    <div class="ring ring-3" style="border-color: rgba(255,255,255,0.05);"></div>
+
+                    <div class="center-circle" style="border: 1px solid #FF5500; background: #0b0e13; box-shadow: 0 0 30px rgba(255, 85, 0, 0.4);">
+                        <i data-lucide="wallet" class="text-[#FF5500] w-6 h-6"></i>
+                        <div class="check-badge" style="background: #FF5500; border-color: #0b0e13; color: black; position: absolute; top: -2px; right: -2px; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #000;">
+                            <i data-lucide="check" width="10" height="10"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative z-10 mt-auto md:mt-0 md:absolute md:bottom-8 md:left-8 pointer-events-none">
+                    <h3 class="text-xl font-bold text-white mb-1">Crypto Exchange<br>&amp; MM Service</h3>
+                    <p class="text-gray-400 text-sm mt-1">INR to dollar and dollar to INR exchange at good rates, secured through <br>@zexmm — no MM, no deal.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-16">
+            <a href="https://t.me/fensat" target="_blank" rel="noopener" class="inline-flex px-10 py-4 btn-furnace text-white font-bold text-base rounded-full">@fensat ✅</a>
+        </div>
+    </div>
+</section>
+    <section id="channels" class="py-24 bg-[#020202] border-t border-white/5 relative z-10">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="relative rounded-[32px] border border-white/10 overflow-hidden p-8 md:p-10 flex flex-col md:flex-row items-center gap-8"
+                 style="background: linear-gradient(150deg, rgba(37,211,102,0.08), #050505 70%);">
+                <div class="absolute top-0 right-0 w-72 h-72 bg-[#25D366]/10 blur-[100px] pointer-events-none"></div>
+
+                <img src="assets/myeg-logo.jpg" alt="MYEG Channel" class="relative z-10 w-28 h-28 md:w-32 md:h-32 rounded-3xl object-cover border border-white/10 shadow-2xl flex-shrink-0">
+
+                <div class="relative z-10 text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#25D366]/30 bg-[#25D366]/10 mb-4">
+                        <i data-lucide="message-circle" width="14" class="text-[#25D366]"></i>
+                        <span class="text-[#25D366] font-bold uppercase tracking-widest text-[10px]">Verified WhatsApp Channel</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-3">Join MYEG Dropshipping Channel</h2>
+                    <p class="text-gray-400 text-base leading-relaxed mb-6 max-w-lg">Follow the verified dropshipping channel for business growth, digital learning and commerce updates.</p>
+                    <a href="https://whatsapp.com/channel/0029Vb7IKVLKAwEqaZy7Nl2J" target="_blank" rel="noopener" class="inline-flex px-8 py-3.5 rounded-full font-bold text-white text-sm"
+                       style="background: linear-gradient(180deg, #2fdb73 0%, #1fa851 100%); box-shadow: 0 0 0 1px rgba(37,211,102,0.5), 0 10px 30px -10px rgba(37,211,102,0.5), inset 0 1px 0 rgba(255,255,255,0.35);">
+                        Join Channel
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+        <section class="ultra-cta-section">
+            <div class="ultra-cta-card">
+                <div class="cta-horizon-glow"></div>
+                <div class="cta-grid-pattern"></div>
+                <div class="cta-left-bg" style="background-image: none;"></div>
+
+                <div class="cta-signal-badge">
+                    <span class="signal-dot"></span>
+                    TAKING CASES
+                </div>
+
+                <h2 class="cta-headline">
+                    Recover. Verify. <br>
+                    Grow.
+                </h2>
+
+                <p class="cta-subline">
+                    Join the network of creators, brands and clients who trust ZEX SM Expert for social media recovery, verification and enterprise-grade deal support.
+                </p>
+
+                <div class="cta-actions">
+                    <a href="https://t.me/fensat" target="_blank" rel="noopener" class="cta-btn-primary">Contact @fensat</a>
+        <button onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})" class="cta-btn-secondary flex items-center gap-2">
+    <i data-lucide="image" width="18" height="18"></i>
+    <span>View Portfolio</span>
+</button>
+
+                </div>
+            </div>
+        </section>
+<footer class="footer-split-wrapper relative z-10 pt-20 pb-20 overflow-hidden">
+    <div class="absolute bottom-[-5%] left-1/2 -translate-x-1/2 text-[15vw] font-black text-white/[0.02] whitespace-nowrap select-none pointer-events-none z-0">
+        ZEX SM EXPERT
+    </div>
+
+    <div class="max-w-[1200px] mx-auto px-6 relative z-10 flex flex-col md:flex-row gap-6 items-stretch">
+
+        <div class="relative w-full md:w-[35%] group">
+            <div class="h-full bg-gradient-to-br from-[#1a0500] to-black border border-[#FF5500]/20 rounded-[32px] p-10 flex flex-col justify-between text-white shadow-2xl relative overflow-hidden z-10">
+
+                <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_left,rgba(255,85,0,0.15),transparent_60%)] pointer-events-none"></div>
+
+                <div class="relative z-10">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="assets/zex-logo.jpg"
+                             alt="ZEX Logo"
+                             class="w-10 h-10 rounded-full object-cover drop-shadow-md">
+
+                        <span class="text-2xl font-extrabold tracking-tight text-metal drop-shadow-md uppercase">ZEX SM Expert</span>
+                    </div>
+                    <h3 class="text-2xl font-bold leading-tight max-w-[90%] text-gray-400">
+                        Smarter social recovery,<br>
+                        <span class="text-[#FF5500]">powered by ZEX.</span>
+                    </h3>
+                </div>
+
+                <div class="relative z-10 mt-12">
+                    <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Stay Connected</p>
+                    <div class="flex gap-3">
+                        <a href="https://instagram.com/myeg" target="_blank" class="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all hover:scale-110 text-gray-400 hover:text-white border border-white/10">
+                            <i data-lucide="instagram" width="18"></i>
+                        </a>
+
+                        <a href="https://t.me/fensat" target="_blank" class="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all hover:scale-110 text-gray-400 hover:text-white border border-white/10">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M21.683 2.668C22.25 2.457 22.84 2.94 22.68 3.52L19.48 19.52C19.34 20.25 18.42 20.53 17.84 20.01L13.29 16.03L11.12 18.28C10.87 18.54 10.45 18.37 10.45 18.01V14.54L19.8 5.46C20.05 5.23 19.72 4.86 19.45 5.07L7.65 13.06L3.38 11.53C2.66 11.27 2.69 10.25 3.42 10.03L21.68 2.67V2.668Z"/>
+    </svg>
+</a>
+
+<a href="https://wa.me/919635179847" target="_blank" class="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all hover:scale-110 text-gray-400 hover:text-white border border-white/10">
+    <i data-lucide="message-circle" width="18"></i>
+</a>
+
+<a href="mailto:nayemfarhad07@gmail.com" class="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all hover:scale-110 text-gray-400 hover:text-white border border-white/10">
+    <i data-lucide="mail" width="18"></i>
+</a>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="absolute z-30 pointer-events-none
+                        bottom-[-20%] right-[-15%]
+                        md:top-1/2 md:right-[-15%] md:bottom-auto md:-translate-y-1/2
+                        w-[45%] md:w-[55%] aspect-square">
+                <div class="animate-float w-full h-full">
+                    <img src="assets/zex-logo.jpg"
+                         class="w-full h-full object-cover rounded-full drop-shadow-2xl opacity-70 border border-white/10"
+                         alt="ZEX floating mark">
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full md:w-[65%] bg-[#0a0a0a] border border-white/10 rounded-[32px] p-10 relative overflow-hidden flex flex-col justify-between shadow-2xl">
+
+            <div class="flex flex-col md:flex-row gap-12 md:gap-24 mb-16 relative z-10 md:ml-4">
+                <div class="flex flex-col gap-5">
+                    <h4 class="text-xs font-bold text-[#FF5500] uppercase tracking-widest">Navigation</h4>
+                    <a href="#services" class="font-medium text-gray-400 hover:text-white transition-colors text-sm">Services</a>
+                    <a href="#adtrack" class="font-medium text-gray-400 hover:text-white transition-colors text-sm">AdTrack</a>
+                    <a href="#tos" class="font-medium text-gray-400 hover:text-white transition-colors text-sm">Trust</a>
+                    <a href="#vouches" class="font-medium text-gray-400 hover:text-white transition-colors text-sm">Vouches &amp; Past Work</a>
+                </div>
+                <div class="flex flex-col gap-5">
+                    <h4 class="text-xs font-bold text-[#FF5500] uppercase tracking-widest">ZEX SM Expert</h4>
+                    <a href="#adtrack" class="font-medium text-gray-400 hover:text-white transition-colors text-sm">About</a>
+                    <a href="http://t.me/fensat" class="font-medium text-gray-400 hover:text-white transition-colors text-sm">Official Telegram</a>
+                    <a href="http://t.me/igtick" class="font-medium text-gray-400 hover:text-white transition-colors text-sm">Contact @igtick On TG</a>
+                    <a href="#portfolio" class="font-medium text-gray-400 hover:text-white transition-colors text-sm">Portfolio &amp; Proofs</a>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-end justify-between gap-8 relative z-10 border-t border-white/5 pt-8">
+                <div class="text-gray-600 text-xs font-medium uppercase tracking-wide">
+                    &copy; 2026 ZEX SM Expert. Premium digital services since 2022.
+                </div>
+
+                <div class="w-full md:max-w-md flex flex-col items-end">
+                    <p class="text-gray-300 font-medium mb-4 text-right text-sm">
+                        Social media moves fast.<br>
+                        <span class="text-gray-500">Stay ahead with ZEX SM Expert.</span>
+                    </p>
+
+            </div>
+
+        </div>
+    </div>
+    </div>
 </footer>
 
-<script src="script.js"></script>
+    </main>
+<script>
+
+    // --- 1. CONFIGURATION & ICONS (Services) ---
+
+    const icons = {
+        insta: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;color:#E1306C"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>',
+        fb: '<svg viewBox="0 0 24 24" fill="currentColor" style="width:32px;height:32px;color:#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>',
+        wa: '<svg viewBox="0 0 24 24" fill="currentColor" style="width:32px;height:32px;color:#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>',
+        tg: '<svg viewBox="0 0 24 24" fill="currentColor" style="width:32px;height:32px;color:#229ED9"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>',
+        biz: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:32px;height:32px;color:#19bfff"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>'
+    };
+
+    // --- 2. DATA (12 ZEX Service Cards, grouped by tab) ---
+    const cardsData = {
+        instagram: [
+            { theme: 'insta', title: 'Instagram Recovery', desc: 'Suspended, disabled, non-appeal and account integrity recovery cases.' },
+            { theme: 'insta', title: 'Instagram Takedown', desc: 'Report-based takedown, fraud/scam profile removal and enforcement cases.' },
+            { theme: 'insta', title: 'Meta Verification', desc: 'Instagram creator verified, business verified and Meta subscription activation.' }
+        ],
+        facebook: [
+            { theme: 'facebook', title: 'Facebook Verified', desc: 'Legacy verified, Meta Verified and Facebook blue badge support.' }
+        ],
+        whatsapp: [
+            { theme: 'wa', title: 'WhatsApp Verified', desc: 'Business verification, channel verified badge and WhatsApp organic growth.' }
+        ],
+        telegram: [
+            { theme: 'telegram', title: 'Telegram Growth', desc: 'Channel growth, Telegram ads, group promotion and campaign placement.' },
+            { theme: 'telegram', title: 'AdTrack AdBot', desc: 'Telegram advertising dashboard, broadcast system and ad campaign workflow.' },
+            { theme: 'telegram', title: 'Telegram Assets', desc: 'NFT usernames, gift assets and username rent support.' }
+        ],
+        other: [
+            { theme: 'biz', title: 'Username Claim', desc: 'Premium handle checks, username claim planning and digital identity support.' },
+            { theme: 'biz', title: 'Crypto Exchange', desc: 'INR to dollar and dollar to INR exchange support at good rates.' },
+            { theme: 'biz', title: 'MM Service', desc: 'Secure middleman procedure via @zexmm. No MM = no deal.' },
+            { theme: 'biz', title: 'Website Building', desc: 'Premium agency, NGO and business website development.' }
+        ]
+    };
+
+    function renderServices(key) {
+        const container = document.getElementById('services-grid');
+        let dataToRender = [];
+
+        if (key === 'all') {
+            dataToRender = [...cardsData.instagram, ...cardsData.facebook, ...cardsData.whatsapp, ...cardsData.telegram, ...cardsData.other];
+        } else {
+            dataToRender = cardsData[key] || [];
+        }
+
+        container.innerHTML = dataToRender.map((item, i) => {
+            let svgIcon = icons.insta;
+            if (item.theme === 'facebook') svgIcon = icons.fb;
+            if (item.theme === 'wa') svgIcon = icons.wa;
+            if (item.theme === 'telegram') svgIcon = icons.tg;
+            if (item.theme === 'biz') svgIcon = icons.biz;
+
+            const cardTheme = (item.theme === 'biz') ? 'telegram' : item.theme;
+            const parallaxClass = (i % 2 !== 0) ? 'parallax-fast' : '';
+
+            return `
+            <div class="card ${cardTheme} ${parallaxClass}">
+                <div class="glow-layer"></div>
+
+                <div class="stars-wrapper">
+                    <svg class="star" style="top:10%; left:10%; width:10px" viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z"/></svg>
+                    <svg class="star" style="top:20%; right:20%; width:6px; animation-delay: 1.5s" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg>
+                    <svg class="star" style="bottom:30%; left:15%; width:8px; animation-delay: 2.5s" viewBox="0 0 24 24"><path d="M12 0L14.5 9.5L24 12L14.5 14.5L12 24L9.5 14.5L0 12L9.5 9.5L12 0Z"/></svg>
+                    <svg class="star" style="bottom:10%; right:10%; width:5px; animation-delay: 0.5s" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg>
+                </div>
+
+                <div class="relative z-10">
+                    <div class="glass-icon-container">
+                        ${svgIcon}
+                    </div>
+                    <h3>${item.title}</h3>
+                    <p>${item.desc}</p>
+                </div>
+
+                <div class="feature-list relative z-10">
+                    <div class="list-item">
+                        <span class="list-left">Status</span>
+                        <span class="list-right text-[#00ff88]">Active</span>
+                    </div>
+                    <div class="list-item">
+                        <span class="list-left">Process</span>
+                        <span class="list-right text-white">Via MM</span>
+                    </div>
+                </div>
+            </div>
+            `;
+        }).join('');
+
+        if(typeof lucide !== 'undefined') lucide.createIcons();
+    }
+
+    // --- 3. DATA (ZEX Portfolio / Proof galleries) ---
+    const portfolioData = {
+        adbot:        { label: 'AdBot Vouches',  files: Array.from({length:6}, (_,i)=>`adbot-vouches-0${i+1}.jpg`) },
+        ig_recovery:  { label: 'Instagram Recovery', files: Array.from({length:6}, (_,i)=>`instagram-recovery-0${i+1}.jpg`) },
+        ig_takedown:  { label: 'Instagram Takedown', files: Array.from({length:6}, (_,i)=>`instagram-takedown-0${i+1}.jpg`) },
+        verification: { label: 'Verification', files: Array.from({length:7}, (_,i)=>`verification-0${i+1}.jpg`) },
+        whatsapp:     { label: 'WhatsApp', files: Array.from({length:5}, (_,i)=>`whatsapp-0${i+1}.jpg`) },
+        tg_takedown:  { label: 'Telegram Takedown', files: Array.from({length:2}, (_,i)=>`telegram-takedown-0${i+1}.jpg`) },
+        websites:     { label: 'Website Portfolio', files: ['websites-01.png'] }
+    };
+
+    function renderPortfolio(key) {
+        const container = document.getElementById('portfolio-grid');
+        const set = portfolioData[key];
+        if (!container || !set) return;
+
+        container.innerHTML = set.files.map(f => `
+            <a href="assets/${f}" target="_blank" rel="noopener" class="proof-tile ${key==='websites' ? 'aspect-video' : 'aspect-[3/4]'}">
+                <img src="assets/${f}" alt="${set.label} proof" loading="lazy">
+            </a>
+        `).join('');
+    }
+
+    window.switchPortfolioTab = function(key, btn) {
+        const buttons = document.querySelectorAll('#portfolio-tabs .tab-btn');
+        const activeClasses = 'tab-btn active group flex-shrink-0 flex items-center gap-2 px-5 py-[10px] rounded-[12px] bg-[linear-gradient(180deg,#1a1a1a_0%,#050505_100%)] border border-[#2a2a2a] text-white text-[11px] font-bold tracking-[1px] uppercase shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_4px_10px_rgba(0,0,0,0.5)] transition-all duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)]';
+        const inactiveClasses = 'tab-btn group flex-shrink-0 flex items-center gap-2 px-5 py-[10px] rounded-[12px] bg-white/5 border border-white/10 text-[#888888] hover:text-white hover:border-white/30 text-[11px] font-bold tracking-[1px] uppercase transition-all duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)]';
+
+        buttons.forEach(b => { b.className = inactiveClasses; });
+        btn.className = activeClasses;
+        btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
+        renderPortfolio(key);
+        if(typeof lucide !== 'undefined') lucide.createIcons();
+    };
+
+    // --- 4. PARALLAX & INIT ---
+    document.addEventListener('DOMContentLoaded', () => {
+        renderServices('all');
+        renderPortfolio('adbot');
+        if(typeof lucide !== 'undefined') lucide.createIcons();
+
+        const parallaxElements = document.querySelectorAll('.parallax-layer');
+        let fastCards = [];
+        let ticking = false;
+
+        window.refreshParallaxCards = function() {
+            fastCards = document.querySelectorAll('.card.parallax-fast');
+        }
+
+        setTimeout(window.refreshParallaxCards, 100);
+
+        function updateParallax() {
+            const scrollY = window.pageYOffset;
+            const screenBottom = scrollY + window.innerHeight;
+
+            if (scrollY < window.innerHeight * 1.5) {
+                parallaxElements.forEach(el => {
+                    const speed = parseFloat(el.getAttribute('data-speed')) || 0.1;
+                    const rotation = parseFloat(el.getAttribute('data-rotation')) || 0;
+                    let transformString = `translate3d(0, ${scrollY * speed}px, 0)`;
+                    if (rotation !== 0) transformString += ` rotate(${rotation}deg)`;
+                    el.style.transform = transformString;
+                });
+            }
+
+            if (window.innerWidth > 768) {
+                fastCards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const absoluteTop = scrollY + rect.top;
+
+                    if (absoluteTop < screenBottom + 100 && absoluteTop + rect.height > scrollY - 100) {
+                        const offset = (scrollY - absoluteTop) * 0.08;
+                        card.style.transform = `translate3d(0, ${offset}px, 0)`;
+                    }
+                });
+            } else {
+                fastCards.forEach(card => card.style.transform = 'none');
+            }
+
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            window.requestAnimationFrame(updateParallax);
+        });
+    });
+
+    // --- 5. TAB SWITCHER (Services) ---
+    window.switchTab = function(key, btn) {
+        const buttons = document.querySelectorAll('#service-tabs .tab-btn');
+
+        const activeClasses = 'tab-btn active group flex-shrink-0 flex items-center gap-2 px-5 py-[10px] rounded-[12px] bg-[linear-gradient(180deg,#1a1a1a_0%,#050505_100%)] border border-[#2a2a2a] text-white text-[11px] font-bold tracking-[1px] uppercase shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_4px_10px_rgba(0,0,0,0.5)] transition-all duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)]';
+        const inactiveClasses = 'tab-btn group flex-shrink-0 flex items-center gap-2 px-5 py-[10px] rounded-[12px] bg-white/5 border border-white/10 text-[#888888] hover:text-white hover:border-white/30 text-[11px] font-bold tracking-[1px] uppercase transition-all duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)]';
+
+        buttons.forEach(b => {
+            b.className = inactiveClasses;
+            const icon = b.querySelector('.chevron-icon');
+            if(icon) icon.classList.add('hidden');
+        });
+
+        btn.className = activeClasses;
+        const activeIcon = btn.querySelector('.chevron-icon');
+        if(activeIcon) activeIcon.classList.remove('hidden');
+
+        btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
+        renderServices(key);
+        if(typeof lucide !== 'undefined') lucide.createIcons();
+        setTimeout(window.refreshParallaxCards, 50);
+    };
+
+    // --- 6. MOBILE MENU ---
+    window.toggleMobileMenu = function() {
+        const m = document.getElementById('mobileMenu');
+        if(m.classList.contains('hidden')){
+            m.classList.remove('hidden');
+            setTimeout(()=>m.classList.remove('opacity-0'),10);
+            document.body.style.overflow='hidden';
+        } else {
+            m.classList.add('opacity-0');
+            setTimeout(()=>m.classList.add('hidden'),300);
+            document.body.style.overflow='';
+        }
+        if(typeof lucide !== 'undefined') lucide.createIcons();
+    }
+
+    // --- 7. Marquees: Client Vouches (top) + Past Work (bottom) ---
+    const clientVouches = Array.from({length:20}, (_,i)=> `assets/client-vouches-${String(i+1).padStart(2,'0')}.jpg`);
+    const pastWork = [
+        ...Array.from({length:6}, (_,i)=> `assets/instagram-recovery-0${i+1}.jpg`),
+        ...Array.from({length:7}, (_,i)=> `assets/verification-0${i+1}.jpg`),
+        ...Array.from({length:5}, (_,i)=> `assets/whatsapp-0${i+1}.jpg`)
+    ];
+
+    const mCon = document.getElementById('marquee-content');
+    if(mCon) {
+        const loopVouches = [...clientVouches, ...clientVouches];
+        mCon.innerHTML = loopVouches.map(src => `
+            <a href="${src}" target="_blank" rel="noopener" class="work-long-card" style="width:260px;height:360px;">
+                <img src="${src}" loading="lazy" alt="Client vouch proof">
+            </a>
+        `).join('');
+    }
+
+    const wTrack = document.getElementById('work-track');
+    if(wTrack) {
+        const loopWork = [...pastWork, ...pastWork];
+        wTrack.innerHTML = loopWork.map(s => `
+            <a href="${s}" target="_blank" rel="noopener" class="work-long-card">
+                <img src="${s}" loading="lazy" alt="ZEX proof">
+            </a>
+        `).join('');
+    }
+
+</script>
+<script>
+    // --- MODAL TOGGLE LOGIC ---
+    function toggleContactForm(show) {
+        const modal = document.getElementById('contactFormModal');
+        if (show || show === undefined) {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        } else {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+    }
+
+    function toggleSuccessModal(show) {
+        const modal = document.getElementById('successModal');
+        const content = document.getElementById('successContent');
+
+        if (show) {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                content.classList.remove('scale-90');
+                content.classList.add('scale-100');
+            }, 10);
+
+            document.body.style.overflow = 'hidden';
+        } else {
+            modal.classList.add('opacity-0');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-90');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+    }
+
+    // --- CONTACT FORM: builds a mailto: link (no backend required) ---
+    document.addEventListener("DOMContentLoaded", function() {
+        const form = document.getElementById('inquiryForm');
+
+        if(form) {
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const data = new FormData(form);
+                const name = data.get('name') || '';
+                const telegram = data.get('telegram') || '';
+                const phone = data.get('phone') || '';
+                const budget = data.get('budget') || '';
+                const service = form.querySelector('select[name="service"]');
+                const serviceLabel = service ? service.options[service.selectedIndex].text : '';
+                const details = data.get('details') || '';
+
+                const subject = encodeURIComponent('New Inquiry from ' + name);
+                const body = encodeURIComponent(
+                    `Name: ${name}\nTelegram: ${telegram}\nPhone: ${phone}\nBudget: ${budget}\nService: ${serviceLabel}\n\nDetails:\n${details}`
+                );
+
+                window.location.href = `mailto:nayemfarhad07@gmail.com?subject=${subject}&body=${body}`;
+
+                toggleContactForm(false);
+                form.reset();
+                toggleSuccessModal(true);
+            });
+        }
+
+        // --- Reveal-on-scroll (preserved from ZEX site behavior) ---
+        try {
+            const revealTargets = document.querySelectorAll('.card, .trust-card, .work-long-card, .proof-tile');
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.style.opacity = '1';
+                        e.target.style.transform = e.target.style.transform || 'none';
+                        obs.unobserve(e.target);
+                    }
+                });
+            }, { threshold: .1 });
+            revealTargets.forEach(el => obs.observe(el));
+        } catch(e) {}
+    });
+</script>
+
 </body>
 </html>
